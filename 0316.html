@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>0316-CSS選擇器與顏色設定:></title>
+        <!--HTML註解-->
+        <style>
+            /* CSS註解 */
+            /* CSS語法
+                選擇棄 selector {
+                property: value;
+                屬性:設定檔;
+                屬性:設定檔;
+                }
+                選擇器有三種寫法: html_tag / #id / .class
+            */
+            div {
+                width: 200px;
+                color: brown;
+                height: 200px;
+                display: inline-block;
+                background: pink;
+
+            }
+            #d1{
+                background: blue;
+
+
+            }
+            /*後寫的設定會覆蓋先寫的*/
+
+            .c1{
+                background: yellow;
+
+
+
+            }
+            .c2{
+                background: rgb(172, 43, 43,0.3) !important;
+                background: orange;
+
+                /*
+                !important > #id > .class > html_tag
+                */
+
+
+            }
+            span{
+                width: 200px;
+                height: 200px;
+                display: inline-block;
+                background: rgb(34, 129, 42);
+            }
+            /*CSS顏色表示方式:
+            1.常見英文單字
+            2.#RRGGBB #000000~#FFFFFF 色碼:標準寫法
+            3.rgb(r,g,b) 0~255
+            4.hsl(h色相~0~360,s彩度0%~100%,L亮度0%~100%)
+            5.rgba (r,g,b,a 0~1可見度)
+            */
+        </style>  
+    </head>
+    <body>
+        <a href="index.html">回首頁</a><br>
+        <!--div:區塊容器-->
+        <div id="d1" class="c1">123</div>
+        <div id="d2" class="c1 c2">123</div>
+
+        <!--span:行內容器-->
+        <span id="s1" class="c2">123</span>
+        <span id="s2" class="c2 c1">123</span>
+
+
+
+
+    </body>
+</html>
