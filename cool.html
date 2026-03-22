@@ -1,1 +1,92 @@
 
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma"        content="no-cache" />
+<meta http-equiv="Expires"       content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>高雄市立鳥松國中</title>
+<style type="text/css">
+	body {
+		font-family: arial, verdana, helvetica, sans-serif;
+		margin: 0rem;
+		padding: 0rem;
+		line-height: 150%;
+	}
+
+	/* 主要內容頁框 */
+	#SWeb_VIEW_Main {
+		display: block;
+		border: none;
+		height: 100vh;
+		width: 100vw;
+		margin: 0rem;
+		padding: 0rem;
+	}
+	
+	/* 訪客人次頁框 */
+	#SWeb_VIEW_Sub {
+		display: block;
+		border: none;
+		z-index: 100;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100vw;
+		height: 2rem;
+		margin: 0rem;
+		padding: 0rem;
+	}
+
+	h1 {
+		position: absolute;
+		z-index: -1;
+		top: 0.3rem;
+		left: 0.3rem;
+		width: auto;
+		height: auto;
+		font-size: 0.8rem;
+		text-decoration: none;
+		margin: 0rem;
+		padding: 0.125rem 0.5rem;
+		border: 0rem;
+		border-radius: 0.25rem;
+		white-space: nowrap;
+		overflow: hidden;
+    	color: #000;
+		background-color: #fff;
+		opacity: 0;
+		transition: z-index .3s linear,
+						opacity .3s linear;
+	}
+
+	h1:focus {
+		z-index: 9999;
+		outline: 0.0625rem solid #60a0ff;
+		opacity: 1;
+		transition: z-index .1s linear,
+						opacity .1s linear;
+	}
+</style>
+<script language="javascript">
+	document.addEventListener("DOMContentLoaded", function() {
+		var Mainiframe = document.getElementById("SWeb_VIEW_Main");
+		if ( !Mainiframe ) return;
+		Mainiframe.onload = function() {
+			if ( Mainiframe.contentWindow ) Mainiframe.contentWindow.focus();
+		};
+	});
+</script>
+</head>
+<body>
+<h1 tabindex="-1">高雄市立鳥松國中 - 頁框設定</h1>
+</div>
+<main aria-label="網站頁框">
+	<iframe id="SWeb_VIEW_Main" title="主要內容頁框" src="/view/index.php?WebID=8"></iframe>
+	<iframe id="SWeb_VIEW_Sub"  title="訪客人次頁框" src="/view/music.php?WebID=8"></iframe>
+
+</main>
+</body>
+</html>
