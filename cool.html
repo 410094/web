@@ -6,45 +6,1055 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma"        content="no-cache" />
 <meta http-equiv="Expires"       content="0" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>高雄市立鳥松國中</title>
+	<link rel="stylesheet" href="/fancybox/fancybox6.1.css"/>
+	<script src="/fancybox/fancybox6.1.umd.js"></script>
+	<script language="javascript">
+		const zh_TW = {
+			ROTATE_CW: "順時鐘旋轉",
+			FLIP_X: "水平翻轉",
+			FLIP_Y: "垂直翻轉",
+   		TOGGLE_FULL: "放大|縮小", // "Toggle zoom level",
+   		TOGGLE_AUTOPLAY: "自動播放|停止播放", // "Toggle slideshow",
+   		TOGGLE_THUMBS: "隱藏縮圖|顯示縮圖", // "Toggle thumbnails",
+   		TOGGLE_FULLSCREEN: "進入全螢幕|退出全螢幕", // "Toggle full-screen mode",
+   		CLOSE: "關閉", // "Close",
+   		PREV: "上一張", // "Previous",
+			NEXT: "下一張" // "Next",
+		};
+	</script>
+
 <style type="text/css">
-	body {
-		font-family: arial, verdana, helvetica, sans-serif;
-		margin: 0rem;
-		padding: 0rem;
-		line-height: 150%;
+/* =========================================== */
+/* 整體設定 開始                               */
+/* =========================================== */
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 11pt;
+  
+  text-align: left;
+  line-height: 120%;
+  background-color: #FFFFFF;
+}
+
+form {
+  margin: 0px;
+  padding: 0px;
+}	
+
+fieldset {
+  margin-left: 0px ;
+  margin-right: 0px ;
+}
+
+legend {
+  text-align: left;
+  color: #000000;
+}
+
+select {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 11pt;
+}
+
+a {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 11pt;
+  color: #003377;
+  text-decoration: none;
+}
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+a:visited {
+  color: #3A0088;
+  text-decoration: none;
+}
+a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+/* =========================================== */
+/* 整體設定 結束                               */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 框架設定 開始                               */
+/* =========================================== */
+/* 主要框架 */
+#DivMain {
+  width:1024px;
+  margin: 0px auto 0px;
+  padding: 30px;
+  /*background-image: url('../../media/style/5-bg.jpg');*/
+  background-position: center top;
+  background-repeat: repeat-y;  
+}
+
+/* 上方框架 */
+#DivTitle {
+  width: 100%;
+  height: 250px;
+  margin: 0px auto 0px;
+  padding: 0px;
+  background-image: url('https://schoolmgn.kh.edu.tw/upload/8/style/nsm900-200-2.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+ 
+/* 中央 左方選單框架 */
+#DivMenu {
+  width: 17%;
+  margin: -50px 0px 0px 22px;
+  text-align: left;
+  float: left;
+}
+
+/* 中央 內容框架 */
+#DivContent {
+  width: 77%;
+  margin: -50px 25px 0px 5px;
+  padding: 0px;
+  float: left;
+}
+
+/* 中央 內容 首頁左方框架 */
+#DivContentLeft {
+  width: 77%;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+
+/* 中央 內容 首頁右方框架 */
+#DivContentRight {
+  width: 20%;
+  margin: 0px 10px 0px 0px;
+  float: right;
+}
+
+/* 下方框架 */
+#DivBottom {
+  width: 100%;
+  height: 3px;
+  margin: 0px auto 0px;
+  padding: 5px 0px 5px 0px;
+ 
+}
+/* =========================================== */
+/* 框架設定 結束                               */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 上方區域設定 開始                           */
+/* =========================================== */
+/* 網站導覽 */
+#DivGuide {
+  text-align: right;
+  font-size: 9t;
+  padding: 0px 60px 0px 0px;
+  float: right;
+}
+
+/* 網站名稱 */
+.WebTitle {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 1pt;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  padding: 50px 0px 0px 80px;
+ 
+}
+
+/* 快速鍵 */
+.AccessL {
+  width: 100%; 
+  padding: 0px 0px 0px 20px;
+  margin: 0px
+  text-align: left; 
+}
+.AccessC {
+  width: 100%; 
+  padding: 0px;
+  margin: 0px
+  text-align: left; 
+}
+.AccessR {
+  width: 100%; 
+  padding: 0px 0px 0px 20px;
+  margin: 0px
+  text-align: left; 
+}
+
+/* 快速鍵連結 */
+a.AccessLink {
+  font-size: 9pt;
+  color: #CCC;
+  text-decoration: none;
+}
+a.AccessLink:link {
+  color: #CCC;
+  text-decoration: none;
+}
+a.AccessLink:visited {
+  color: #CCC;
+  text-decoration: none;
+}
+a.AccessLink:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+
+/* 網站導覽連結 */
+a.GuideLink {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 11pt;
+  color: #000000;
+  text-decoration: none;
+}
+a.GuideLink:link {
+  color: #000000;
+  text-decoration: none;
+}
+a.GuideLink:visited {
+  color: #000000;
+  text-decoration: none;
+}
+a.GuideLink:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+/* =========================================== */
+/* 上方區域設定 結束                           */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 首頁中央區域設定 開始                       */
+/* =========================================== */
+/* 首頁 中央功能選單框架（自動列出、網站導覽、圖片輪播、文字輪播） */
+.ContentFrameHome {
+  border: 1px dotted #000000;
+  font-size: 10pt;
+  margin: 10px 0px 0px 0px;
+}
+
+/* 首頁 中央功能選單標題（自動列出、網站導覽、圖片輪播、文字輪播） */
+.ContentFrameHomeTitle {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+/* 主要內容框架 */
+.ContentFrame {
+  margin: 0px 15px 10px 10px;
+}
+
+/* 主要內容框架 功能選單名稱 */
+.ContentMenuName {
+	height: 40px;
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  color: #000000;
+  text-align: left;
+  margin-top: 10px;
+  padding: 5px 0px 0px 60px;
+ /* background-image: url('../../media/style/5-subject.jpg');*/
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+/* =========================================== */
+/* 首頁中央區域設定 結束                       */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 下方區域設定 開始                           */
+/* =========================================== */
+/* 下方版權框架 */
+.FootBlock{
+  text-align:center;
+  padding-top: 90px;
+}
+
+/* 下方版權表格 */
+.FootText {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  text-align: center;
+}
+
+/* 下方版權連結 */
+a.FootLink {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #0000000;
+  text-decoration: none;
+}
+a.FootLink:link {
+  color: #000000;
+  text-decoration: none;
+}
+a.FootLink:visited {
+  color: #000000;
+  text-decoration: none;
+}
+a.FootLink:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+/* =========================================== */
+/* 下方區域設定 結束                           */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 左方選單設定 開始                           */
+/* =========================================== */
+/* 主選單標題 */
+.MenuTitle_0 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  color: #3879B9;
+  line-height: 180%;
+  text-align: center;
+  margin: 10px 0px 2px 20px;
+  padding-left: 20px;
+ /* background-image: url('../../media/style/5-menu.jpg');*/
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+/* 子選單標題 */
+.MenuSubTitle_0 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  color: #3879B9;
+  line-height: 180%;
+  text-align: left;
+  margin: 10px 0px 2px 28px;
+  padding-left: 18px;
+ background-image: url('../../media/style/5-submenu.jpg');
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+/* 選單連結 */
+a.MenuLink_0 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  color: #3879B9;
+  text-decoration: none;
+}
+a.MenuLink_0:link {
+  color: #3879B9;
+  text-decoration: none;
+}
+a.MenuLink_0:visited {
+  color: #3879B9;
+  text-decoration: none;
+}
+a.MenuLink_0:hover {
+  color: #0099FF;
+  text-decoration: none;
+}
+/* =========================================== */
+/* 左方選單設定 結束                           */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 首頁中間選單設定 開始                       */
+/* =========================================== */
+a.MenuLink_1 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  color: #4B618C;
+  text-decoration: none;
+}
+a.MenuLink_1:link {
+  color: #4B618C;
+  text-decoration: none;
+}
+a.MenuLink_1:visited {
+  color: #4B618C;
+  text-decoration: none;
+}
+a.MenuLink_1:hover {
+  color: #4B618C;
+  text-decoration: underline;
+}
+/* =========================================== */
+/* 首頁中間選單設定 結束                       */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 右方選單設定 開始                           */
+/* =========================================== */
+/* 主選單標題 */
+.MenuTitle_2 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  color: #4B618C;
+  line-height: 180%;
+  text-align: center;
+  margin: 10px 0px 2px 5px;
+  padding-left: 20px;
+  /*background-image: url('../../media/style/r_menu.png');*/
+  background-repeat: no-repeat;
+}
+
+/* 子選單標題 */
+.MenuSubTitle_2 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  color: #4B618C;
+  line-height: 180%;
+  text-align: left;
+  margin: 10px 0px 2px 30px;
+  padding-left: 20px;
+  background-image: url('../../media/style/r_submenu.jpg');
+  background-repeat: no-repeat;
+}
+
+/* 選單連結 */
+a.MenuLink_2 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  color: #4B618C;
+  text-decoration: none;
+}
+
+a.MenuLink_2:link {
+  color: #4B618C;
+  text-decoration: none;
+}
+
+a.MenuLink_2:visited {
+  color: #4B618C;
+  text-decoration: none;
+}
+
+a.MenuLink_2:hover {
+  color: #4B618C;
+  text-decoration: underline;
+}
+/* =========================================== */
+/* 右方選單設定 結束                           */
+/* =========================================== */
+
+
+/* =========================================== */
+/* 功能選單 開始                               */
+/* =========================================== */
+/* 框架設定 */
+.ContentMain {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;  
+}
+
+/* 標題設定 */
+.ContentTitle {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  color: #333333;
+  text-align: left;
+  padding: 5px;
+  margin: 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* 內容設定 */
+.ContentBody {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size:10pt;
+  color: #003377;
+  margin: 10px 20px 10px 20px;
+  padding: 0px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-align: justify; 
+  text-justify: inter-ideograph;
+  line-height: 150%; 
+}
+
+/* 清單 */
+.ContentList{
+  margin: 0px;
+  padding-left: 25px;
+  background-image: url('../../media/style/5-dot.jpg');
+  background-repeat: no-repeat;
+}
+
+/* 清單奇數列 */
+.ContentBody .ContentList .ContentListOdd {
+	background-color: #ffffff;
+}
+
+/* 清單偶數列 */
+.ContentBody .ContentList .ContentListEven {
+	background-color: #ffffff;
+}
+
+/* 附件 */
+.ContentAttach {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #666666;
+  margin: 10px 20px 10px 20px;
+  padding: 0px;
+  text-align: justify; 
+  text-justify: inter-ideograph;
+  line-height: 150%; 
+}
+
+/* 備註說明 */
+.ContentMemo {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+  text-align: left;
+  border-bottom: 1px solid #666666;
+  margin: 10px 20px 30px 20px;
+}
+
+/* 換頁控制 */
+.ContentPageChange {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+  text-align: right;
+  margin: 10px 20px 10px 10px;
+}
+
+/* 換頁連結 */
+a.PageChangeLink {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+  text-decoration: underline;
+}
+/* 換頁連結（未瀏覽） */
+a.PageChangeLink:link {
+  color: #999999;
+  text-decoration: underline;
+}
+/* 換頁連結（已瀏覽） */
+a.PageChangeLink:visited {
+  color: #999999;
+  text-decoration: underline;
+}
+/* 換頁連結（滑鼠移至上方） */
+a.PageChangeLink:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* 類別選擇控制 */
+.ContentGroupChange {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  text-align: right;
+  margin: 10px 20px 10px 10px;
+	float: right;
+}
+
+/* 搜尋控制 */
+.ContentSearch {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+  text-align: right;
+  margin: 10px 20px 10px 10px;
+  float: left;
+}
+
+/* 搜尋連結 */
+a.ContentSearchLink {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+  text-decoration: underline;
+}
+/* 搜尋連結（未瀏覽） */
+a.ContentSearchLink:link {
+  color: #999999;
+  text-decoration: underline;
+}
+/* 搜尋連結（已瀏覽） */
+a.ContentSearchLink:visited {
+  color: #999999;
+  text-decoration: underline;
+}
+/* 搜尋連結（滑鼠移至上方） */
+a.ContentSearchLink:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* 網站導覽內容 */
+.GuideBody {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 12pt;
+  color: #666666;
+  margin: 10px 20px 10px 20px;
+  padding: 0px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-align: justify; 
+  text-justify: inter-ideograph;
+  line-height: 150%; 
+} 
+
+/* 網站導覽內容標題 */
+.MenuTitle_guide {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 12pt;
+  color: #603D1D;
+  line-height: 180%;
+  text-align: left;
+  margin: 10px 0px 2px 20px;
+  padding-left: 20px;
+}
+
+/* 網站導覽內容子標題 */
+.MenuSubTitle_guide {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 12pt;
+  color: #603D1D;
+  line-height: 180%;
+  text-align: left;
+  margin: 10px 0px 2px 30px;
+  padding-left: 20px;
+}
+
+/* 網站導覽內容連結 */
+a.MenuLink_guide {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 12pt;
+  color: #AB6D36;
+  text-decoration: none;
+}
+a.MenuLink_guide:link {
+  color: #AB6D36;
+  text-decoration: none;
+}
+a.MenuLink_guide:visited {
+  color: #AB6D36;
+  text-decoration: none;
+}
+
+a.MenuLink_guide:hover {
+  color: #603D1D;
+  text-decoration: underline;
+}
+
+/* 多筆資料註腳 */
+.ContentSign {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+  text-align: right;
+  border-bottom: 1px solid #666666;
+  margin: 10px 20px 10px 20px;
+}
+
+/* 外部連結嵌入網頁 */
+.ContentIFrame {
+  width: 100%;
+  height: 500px;
+  margin: 0px auto 0px;
+  padding: 0px;
+}
+
+/* 相簿表格*/
+.ContentAlbumTable{
+  width:95%;
+  border-bottom: 1px dotted #c0c0c0;
+  margin: 0px 20px 10px 20px;  
+}
+
+/* 相簿 */
+.ContentAlbum {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #666666;
+  line-height: 180%;
+  text-align: left;
+  margin: 10px 5px 10px 0px;
+  padding-left: 30px;
+  background-image: url('../../media/public/folder.gif');
+  background-repeat: no-repeat;
+}
+
+/* 最新相片 */
+.ContentPhotoNew {
+  text-align:left;
+  padding-left:25px;
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #666666;  
+}
+
+/* 相框（縮圖） */
+.ContentPhotoTable{
+  margin: 0px 20px 10px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* 相片 */
+.ContentPhoto {
+  border:1px dotted #c0c0c0;
+  background-color: #fcfcfc; 
+  width: 120px; 
+  height: 120px;
+  margin: 2px 2px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 相片名稱 */
+.ContentPhotoName  {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #666666;
+  padding-top:5px;
+  padding-bottom:20px;
+  text-align: center;
+}
+
+/* 相片簡述 */
+.ContentPhotoMemo{
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+}
+
+/* 閱覽相片時「上一張、下一張」區塊之設定 */
+.ContentPhotoMenu{
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  padding-bottom: 5px;
+  margin: 0px 10px 10px 0px;
+  width:590px;
+  text-align:right;
+  border-bottom:1px dotted #c0c0c0;
+}
+  
+/* 相片寬度 */
+.ContentPhotoWidth{
+   width:550px;
+}
+
+/* 相框表格 */
+.ContentPhotoLayoutTable{
+  border:1px dotted #c0c0c0;  
+}
+                    
+/* 相框 */
+.ContentPhotoLayout{
+  background-color: #F0F0F0;
+  text-align:center;
+  margin: 0px;
+  padding: 20px;
+} 
+
+/* 相簿連結設定 */
+a.PhotoLink {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 12pt;
+  color: #4d525e;
+  text-decoration: none;
+}
+a.PhotoLink:link {
+  color: #4d525e;
+  text-decoration: none;
+}
+a.PhotoLink:visited {
+  color: #4d525e;
+  text-decoration: none;
+}
+a.PhotoLink:hover {
+  color: #924677;
+  text-decoration: underline;
+}
+
+/* 相片上下連結設定 */
+a.PhotoLinkSwitch {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #999999;
+  text-decoration: underline;
+}
+a.PhotoLinkSwitch:link {
+  color: #999999;
+  text-decoration: underline;
+}
+a.PhotoLinkSwitch:visited {
+  color: #999999;
+  text-decoration: underline;
+}
+a.PhotoLinkSwitch:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* 萬用欄位（左方） */
+.MenuContent_0 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  line-height: 150%;
+  text-align: left;
+  margin: 0px 10px 10px 20px;
+  padding: 5px 0px 10px 10px;
+  background-repeat: no-repeat;
+  border-top: #6699CC dotted 1px;
+  word-wrap: Break-word;
+  overflow: hidden;
+}
+
+/* 萬用欄位（中央） */
+.MenuContent_1 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  line-height: 150%;
+  text-align: left;
+  margin: 5px 0px 10px 0px;
+  padding: 5px 0px 10px 5px;
+  background-repeat: no-repeat;
+  border-top: #6699CC dotted 1px;
+  word-wrap: Break-word;
+  overflow: hidden;
+}
+
+/* 萬用欄位（右方） */
+.MenuContent_2 {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  line-height: 150%;
+  text-align: left;
+  margin: 0px 5px 10px 5px;
+  padding: 5px 0px 10px 5px;
+  background-repeat: no-repeat;
+  border-top: #6699CC dotted 1px;
+  word-wrap: Break-word;
+  overflow: hidden;
+}
+
+/* Google、成語典、國語辭典 */
+.MenuQuery {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #666666;
+  line-height: 180%;
+  text-align: center;
+  margin: 0px 5px 2px 5px;
+  padding-bottom: 5px;
+	border: 1px solid #6699CC;
+}
+
+/* Google、成語典、國語辭典 輸入*/
+.MenuQueryInput {
+  font-size: 9pt;
+	height: 15px;
+	width: 100px;
+	border: 1px solid #6699CC;
+	margin-bottom: 5px;
+}	
+
+/* Google、成語典、國語辭典 按鈕*/
+.MenuQueryButton {
+  font-size: 9pt;
+	height: 20px;
+	border: 1px solid #6699CC;
+}
+
+/* 圖片連結 */
+.MenuMediaLink {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  line-height: 180%;
+  text-align: center;
+  margin: 0px 5px 2px 5px;
+  padding-bottom: 5px;
+	border: 1px solid #6699CC;
+}
+
+/* 圖片連結 標題 */
+.MenuMediaLinkTitle {
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+/* 圖片連結 圖片*/
+.MenuMediaLinkSrc {
+	width: 125px;
+	margin: 2px 0px;
+	border: 1px dotted #c0c0c0;" 
+}
+
+/* 圖片輪播 */
+.MenuPhotoShow {
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+  padding:15px;
+  border:1px dotted #6699CC;
+  background-color: #f0f0f0;
+}
+
+/* 文字輪播 */
+.MenuTextShow {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 10pt;
+  height: 25px;
+  color: #666666;
+  text-align: left;
+  margin: 10px 0px 0px 0px;
+  border:1px dotted #6699CC;
+  background-color: #ffffff;
+}
+
+/* 文字輪播名稱 */
+.MenuTextShowTitle {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  width: 57px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 2px;
+  margin: 10px 0px 0px 0px;
+}
+
+/* 文字輪播內容捲動 */
+.MenuTextShowTicker {
+	width: 480px;
+	height: 20px; 
+	overflow: hidden;
+}
+
+/* 新聞速報 */
+.MenuNowNews {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 9pt;
+  color: #666666;
+  text-align: left;
+  margin: 10px 0px 0px 0px;
+  background-color:#ffffff;
+  border:1px dotted #6699CC;
+}
+/* =========================================== */
+/* 功能選單 結束                               */
+/* =========================================== */
+
+/* 圖片連結輪播 */
+.MenuPhotoLink {
+  text-align: center;
+  margin: 0.625rem 0rem 0rem 0rem;
+  padding:0.9375rem;
+  border:0.0625rem dotted #734A69;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+/* 網站名稱 連結 */
+.WebTitle a {
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* 名稱圖檔 */
+#WebOrgTitle {
+  width: 25rem;
+  vertical-align: middle;
+}
+
+/* Logo 圖檔 */
+#WebOrgLogo {
+  width: 3rem;
+  vertical-align: middle;
+}
+</style>
+<style type="text/css">
+	html {
+  		scroll-behavior: smooth;
 	}
 
-	/* 主要內容頁框 */
-	#SWeb_VIEW_Main {
-		display: block;
-		border: none;
-		height: 100vh;
-		width: 100vw;
-		margin: 0rem;
-		padding: 0rem;
+	a {
+		outline: 0rem dashed #60a0ff;
+		transition: outline .1s linear;	
 	}
-	
-	/* 訪客人次頁框 */
-	#SWeb_VIEW_Sub {
-		display: block;
-		border: none;
-		z-index: 100;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100vw;
-		height: 2rem;
-		margin: 0rem;
+
+	:focus-visible {
+		outline: 0.1875rem dashed #60a0ff;
+		transition: outline .1s linear;	
+	}
+		
+	.visually-hidden {
+		position: absolute;
+		width: 0.0625rem;
+		height: 0.0625rem;
 		padding: 0rem;
+		margin: -0.0625rem;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0rem;
+	}
+
+	.skip_to_mainContent a {
+		position: absolute;
+		z-index: 0;
+		top: -2.25rem;
+		left: 0.625rem;
+		text-decoration: none;
+		width: auto;
+		height: auto;
+		padding: 0.375rem;
+		white-space: nowrap;
+		overflow: hidden;
+    	color: #000;
+		background-color: #fff;
+		opacity: 0;
+		outline: 0.1875em dashed #60a0ff;
+		transition: opacity .3s linear,
+		            top     .3s linear;
+	}
+
+	.skip_to_mainContent a:focus {
+		z-index: 9999;
+		top: 0.625rem;
+		opacity: 1;
+		transition: opacity .1s linear,
+		            top     .1s linear;
 	}
 
 	h1 {
 		position: absolute;
 		z-index: -1;
 		top: 0.3rem;
-		left: 0.3rem;
+		right: 0.3rem;
 		width: auto;
 		height: auto;
 		font-size: 0.8rem;
@@ -52,7 +1062,7 @@
 		margin: 0rem;
 		padding: 0.125rem 0.5rem;
 		border: 0rem;
-		border-radius: 0.25rem;
+      border-radius: 0.25rem;
 		white-space: nowrap;
 		overflow: hidden;
     	color: #000;
@@ -61,7 +1071,7 @@
 		transition: z-index .3s linear,
 						opacity .3s linear;
 	}
-
+	
 	h1:focus {
 		z-index: 9999;
 		outline: 0.0625rem solid #60a0ff;
@@ -70,23 +1080,1376 @@
 						opacity .1s linear;
 	}
 </style>
-<script language="javascript">
-	document.addEventListener("DOMContentLoaded", function() {
-		var Mainiframe = document.getElementById("SWeb_VIEW_Main");
-		if ( !Mainiframe ) return;
-		Mainiframe.onload = function() {
-			if ( Mainiframe.contentWindow ) Mainiframe.contentWindow.focus();
-		};
-	});
+<script language="javascript">	
+	function ShowSubMenu(_Menu) {
+		var o_menu   = document.getElementById(_Menu);
+		var o_menu_A = document.getElementById(_Menu + "_A");
+		if ( o_menu.style.display == "none" ) {
+			o_menu.style.display = "";
+			o_menu_A.setAttribute("aria-expanded", "true");
+		}
+		else {
+			o_menu.style.display = "none";
+			o_menu_A.setAttribute("aria-expanded", "false");
+		}
+	}
 </script>
-</head>
-<body>
-<h1 tabindex="-1">高雄市立鳥松國中 - 頁框設定</h1>
+</head><body>
+<h1 tabindex="-1">高雄市立鳥松國中</h1>
+<div id="SkipToMC" class="skip_to_mainContent">
+	<a href="#AccessLinkC" title="將網頁焦點移動到主要內容區">跳到主要內容區</a>
 </div>
-<main aria-label="網站頁框">
-	<iframe id="SWeb_VIEW_Main" title="主要內容頁框" src="/view/index.php?WebID=8"></iframe>
-	<iframe id="SWeb_VIEW_Sub"  title="訪客人次頁框" src="/view/music.php?WebID=8"></iframe>
+<form id="MainFormArea" action="/view/index.php" method="get" name="doit">
+<input type="hidden" name="WebID"      value="8">    
+<input type="hidden" name="MainType"   value="HOME">    
+<input type="hidden" name="SubType"    value="0">    
+<input type="hidden" name="MainMenuId" value="0">    
+<input type="hidden" name="SubMenuId"  value="0">    
 
-</main>
+<input type="hidden" name="page"       value="">
+<input type="hidden" name="DataId"     value="0">
+<input type="hidden" name="TypeChange" value="">
+
+<input type="hidden" name="SubId"      value="">    
+<input type="hidden" name="Work"       value="">
+<div id="DivMain">
+		<div id="DivTitle" role="banner" aria-label="高雄市立鳥松國中網站橫幅">
+		<div id="DivGuide" aria-label="上方選單連結區" role="navigation">
+			<a id="AccessLinkU" class="AccessLink" accesskey="U" href="#AccessLinkU" title="上方選單連結區（Alt+U）">:::</a>
+			<a id="WebGuide" class="GuideLink" style="margin-left: 0.625rem;" href="/view/index.php?WebID=8&MainType=HOME&SubType=GUIDE" title="提供瞭解網站整體架構及鍵盤快捷鍵">網站導覽</a>
+		</div>
+		<div id="DivWebTitle" class="WebTitle">
+							<a href="/view/index.php?WebID=8&MainType=HOME" title="點擊可回首頁"><img id='WebOrgLogo' src='/upload/8/style/OrgLogo.png' alt='高雄市立鳥松國中Logo'><img id='WebOrgTitle' src='/upload/8/style/OrgTitle.png' alt='高雄市立鳥松國中首頁'></a>
+					</div>
+	</div>
+
+	<div id="DivMenu" role="navigation" aria-label="左方選單連結區">            
+			<div id="DivAccessL" class="AccessL"><a id="AccessLinkL" class="AccessLink" accesskey="L" href="#AccessLinkL" title="左方選項連結區（Alt+L）">:::</a></div>
+   
+	<div id="D_8_H" class="MenuTitle_0" style="margin-top: 0rem;">
+				<a id="AccessLinkH" accesskey="H" class="MenuLink_0" href="/view/index.php?WebID=8&MainType=HOME" title="高雄市立鳥松國中：回首頁"><img src='/upload/8/menu/回頁首頁.jpg' border='0' align='absmiddle' alt='首頁'></a>
+			</div>
+			<div id="D_8_12962" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0" title="提供網站「重要消息」內容"><img src='/upload/8/menu/重要消息.jpg' border='0' align='absmiddle' alt='重要消息'></a>	            	   
+			</div>
+					<div id="D_8_208" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0" title="提供網站「最新訊息」內容"><img src='/upload/8/menu/最新消息.jpg' border='0' align='absmiddle' alt='最新訊息'></a>	            	   
+			</div>
+				<div id="D_8_209" class="MenuTitle_0">
+			<a id="menu_sub_209_A" role="button"  aria-haspopup="true" aria-expanded="false" class="MenuLink_0"
+				href="javascript:ShowSubMenu('menu_sub_209');" title="提供網站「認識松中」分類內容"><img src='/upload/8/menu/認識松中.jpg' border='0' align='absmiddle' alt='認識松中'></a>
+		</div>
+			<div style="display:none;" id="menu_sub_209">
+			           
+				<div id="D_8_209_210" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=209&SubMenuId=210" title="提供網站「認識松中 - 學校沿革」內容">學校沿革</a>
+									</div>
+			           
+				<div id="D_8_209_1229" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=209&SubMenuId=1229" title="提供網站「認識松中 - 學校願景」內容">學校願景</a>
+									</div>
+			           
+				<div id="D_8_209_1225" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=209&SubMenuId=1225" title="提供網站「認識松中 - 松中之歌」內容">松中之歌</a>
+									</div>
+			           
+				<div id="D_8_209_1228" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=209&SubMenuId=1228" title="提供網站「認識松中 - 松中校徽」內容">松中校徽</a>
+									</div>
+			           
+				<div id="D_8_209_212" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=209&SubMenuId=212" title="提供網站「認識松中 - 地理位置」內容">地理位置</a>
+									</div>
+			           
+				<div id="D_8_209_1224" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=209&SubMenuId=1224" title="提供網站「認識松中 - 處室分機」內容">處室分機</a>
+									</div>
+			              
+		</div>
+			<div id="D_8_213" class="MenuTitle_0">
+			<a id="menu_sub_213_A" role="button"  aria-haspopup="true" aria-expanded="false" class="MenuLink_0"
+				href="javascript:ShowSubMenu('menu_sub_213');" title="提供網站「行政單位」分類內容"><img src='/upload/8/menu/行政單位.jpg' border='0' align='absmiddle' alt='行政單位'></a>
+		</div>
+			<div style="display:none;" id="menu_sub_213">
+			           
+				<div id="D_8_213_214" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=213&SubMenuId=214" title="提供網站「行政單位 - 校長室」內容">校長室</a>
+									</div>
+			           
+				<div id="D_8_213_1259" class="MenuSubTitle_0">
+												<a class="MenuLink_0" href="http://affairs.kh.edu.tw/11" target="_blank" title="開啟「行政單位 - 教務處」（此項連結開啟新視窗）">教務處</a>
+										</div>
+			           
+				<div id="D_8_213_1260" class="MenuSubTitle_0">
+												<a class="MenuLink_0" href="http://affairs.kh.edu.tw/12" target="_blank" title="開啟「行政單位 - 學務處」（此項連結開啟新視窗）">學務處</a>
+										</div>
+			           
+				<div id="D_8_213_1262" class="MenuSubTitle_0">
+												<a class="MenuLink_0" href="http://affairs.kh.edu.tw/4635" target="_blank" title="開啟「行政單位 - 輔導室」（此項連結開啟新視窗）">輔導室</a>
+										</div>
+			           
+				<div id="D_8_213_20248" class="MenuSubTitle_0">
+												<a class="MenuLink_0" href="http://affairs.kh.edu.tw/13" target="_blank" title="開啟「行政單位 - 總務處」（此項連結開啟新視窗）">總務處</a>
+										</div>
+			           
+				<div id="D_8_213_1264" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=213&SubMenuId=1264" title="提供網站「行政單位 - 人事室」內容">人事室</a>
+									</div>
+			           
+				<div id="D_8_213_220" class="MenuSubTitle_0">
+											<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=0&SubType=103&MainMenuId=213&SubMenuId=220" title="提供網站「行政單位 - 會計室」內容">會計室</a>
+									</div>
+			              
+		</div>
+				<div id="D_8_1349" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=1349&SubMenuId=0" title="提供網站「行事曆」內容"><img src='/upload/8/menu/行事曆.jpg' border='0' align='absmiddle' alt='行事曆'></a>	            	   
+			</div>
+					<div id="D_8_58508" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0" title="提供網站「活動照片」內容"><img src='/upload/8/menu/活動照片_1_1.jpg' border='0' align='absmiddle' alt='活動照片'></a>	            	   
+			</div>
+					<div id="D_8_21727" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=21727&SubMenuId=0" title="提供網站「活動影音」內容"><img src='/upload/8/menu/活動影音.jpg' border='0' align='absmiddle' alt='活動影音'></a>	            	   
+			</div>
+					<div id="D_8_52872" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=103&SubType=0&MainMenuId=52872&SubMenuId=0" title="提供網站「午餐」內容"><img src='/upload/8/menu/午餐114.jpg' border='0' align='absmiddle' alt='午餐'></a>	            	   
+			</div>
+						<div id="D_8_41157" class="MenuTitle_0">
+					<a class="MenuLink_0" href="https://fatraceschool.k12ea.gov.tw/frontend/search.html?school=64736660&period=" target="_blank" title="開啟「菜色」（此項連結開啟新視窗）"><img src='/upload/8/menu/每日菜色.jpg' border='0' align='absmiddle' alt='菜色'></a>
+				</div>
+						<div id="D_8_222" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=104&SubType=0&MainMenuId=222&SubMenuId=0" title="提供網站「親職月刊」內容"><img src='/upload/8/menu/親職月刊.jpg' border='0' align='absmiddle' alt='親職月刊'></a>	            	   
+			</div>
+						<div id="D_8_1190" class="MenuTitle_0">
+					<a class="MenuLink_0" href="https://read.moe.edu.tw/124512/library" target="_blank" title="開啟「圖書館」（此項連結開啟新視窗）"><img src='/upload/8/menu/圖書館.jpg' border='0' align='absmiddle' alt='圖書館'></a>
+				</div>
+							<div id="D_8_34092" class="MenuTitle_0">
+					<a class="MenuLink_0" href="" target="_blank" title="開啟「學生專區」（此項連結開啟新視窗）"><img src='/upload/8/menu/學生專區.jpg' border='0' align='absmiddle' alt='學生專區'></a>
+				</div>
+						<div id="D_8_34090" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=34090&SubMenuId=0" title="提供網站「獎助學金」內容"><img src='/upload/8/menu/獎助學金.jpg' border='0' align='absmiddle' alt='獎助學金'></a>	            	   
+			</div>
+					<div id="D_8_34091" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=34091&SubMenuId=0" title="提供網站「升學專區」內容"><img src='/upload/8/menu/升學專區.jpg' border='0' align='absmiddle' alt='升學專區'></a>	            	   
+			</div>
+					<div id="D_8_34089" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=103&SubType=0&MainMenuId=34089&SubMenuId=0" title="提供網站「成績查詢」內容"><img src='/upload/8/menu/成績查詢.jpg' border='0' align='absmiddle' alt='成績查詢'></a>	            	   
+			</div>
+					<div id="D_8_28593" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=103&SubType=0&MainMenuId=28593&SubMenuId=0" title="提供網站「課輔基金」內容"><img src='/upload/8/menu/課輔基金.jpg' border='0' align='absmiddle' alt='課輔基金'></a>	            	   
+			</div>
+					<div id="D_8_28594" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=103&SubType=0&MainMenuId=28594&SubMenuId=0" title="提供網站「興學基金」內容"><img src='/upload/8/menu/興學基金.jpg' border='0' align='absmiddle' alt='興學基金'></a>	            	   
+			</div>
+						<div id="D_8_34128" class="MenuTitle_0">
+					<a class="MenuLink_0" href="" target="_blank" title="開啟「教師專區」（此項連結開啟新視窗）"><img src='/upload/8/menu/教師專區.jpg' border='0' align='absmiddle' alt='教師專區'></a>
+				</div>
+						<div id="D_8_11774" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=11774&SubMenuId=0" title="提供網站「教師研習專區」內容"><img src='/upload/8/menu/教師研習.jpg' border='0' align='absmiddle' alt='教師研習專區'></a>	            	   
+			</div>
+					<div id="D_8_40900" class="MenuTitle_0">
+				<a class="MenuLink_0" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=40900&SubMenuId=0" title="提供網站「人事訊息」內容"><img src='/upload/8/menu/人事訊息.jpg' border='0' align='absmiddle' alt='人事訊息'></a>	            	   
+			</div>
+			<style type="text/css">
+		.MenuMediaLink img {
+			transition: box-shadow .2s linear, 
+							transform  .2s linear; 
+		}
+		
+		.MenuMediaLink img:hover {
+			box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+			transform: scale(1.008);
+		}
+	</style>
+	<fieldset id="D_8_34099" class="MenuMediaLink" style="margin-top: 0.5rem;">
+		<legend class="MenuMediaLinkTitle">教師資訊<span style="display:none;">教師資訊</span></legend>
+					<div>
+				<a href="https://www4.inservice.edu.tw/"  title="開啟「教師在職進修」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34099/teacher.jpg" border="0" 
+						  align="absmiddle" alt="教師在職進修"></a>
+			</div>
+					<div>
+				<a href="http://teachernet.moe.edu.tw/MAIN/index.aspx"  title="開啟「教專」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34099/right-21.jpg" border="0" 
+						  align="absmiddle" alt="教專"></a>
+			</div>
+					<div>
+				<a href="https://elearn.hrd.gov.tw/mooc/index.php"  title="開啟「港都E學苑」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34099/6.JPG" border="0" 
+						  align="absmiddle" alt="港都E學苑"></a>
+			</div>
+					<div>
+				<a href="https://moe.elearn.hrd.gov.tw/mooc/index.php"  title="開啟「教育部數位學習平台」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34099/數位學習.jpg" border="0" 
+						  align="absmiddle" alt="教育部數位學習平台"></a>
+			</div>
+			</fieldset>
+	<style type="text/css">
+		.MenuMediaLink img {
+			transition: box-shadow .2s linear, 
+							transform  .2s linear; 
+		}
+		
+		.MenuMediaLink img:hover {
+			box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+			transform: scale(1.008);
+		}
+	</style>
+	<fieldset id="D_8_89082" class="MenuMediaLink" style="margin-top: 0.5rem;">
+		<legend class="MenuMediaLinkTitle">相關網站<span style="display:none;">相關網站</span></legend>
+					<div>
+				<a href="https://www.ptskids.tw/"  title="開啟「公視兒少資源網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 132328.png" border="0" 
+						  align="absmiddle" alt="公視兒少資源網"></a>
+			</div>
+					<div>
+				<a href="https://www.kscc.kh.edu.tw/"  title="開啟「高市學輔中心」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 133301.png" border="0" 
+						  align="absmiddle" alt="高市學輔中心"></a>
+			</div>
+					<div>
+				<a href="https://www.gender.edu.tw/web/index.php/home"  title="開啟「教育部性別平等教育」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 132703.png" border="0" 
+						  align="absmiddle" alt="教育部性別平等教育"></a>
+			</div>
+					<div>
+				<a href="https://165.npa.gov.tw/#/"  title="開啟「全民165防詐網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 132800.png" border="0" 
+						  align="absmiddle" alt="全民165防詐網"></a>
+			</div>
+					<div>
+				<a href="https://www.e-quit.org/"  title="開啟「戒菸網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 132852.png" border="0" 
+						  align="absmiddle" alt="戒菸網"></a>
+			</div>
+					<div>
+				<a href="https://esms.moenv.gov.tw/"  title="開啟「環境部」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 132947.png" border="0" 
+						  align="absmiddle" alt="環境部"></a>
+			</div>
+					<div>
+				<a href="https://scitechvista.nat.gov.tw/"  title="開啟「科技大觀園」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 133108.png" border="0" 
+						  align="absmiddle" alt="科技大觀園"></a>
+			</div>
+					<div>
+				<a href="https://nit.immigration.gov.tw/"  title="開啟「新住民」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 133126.png" border="0" 
+						  align="absmiddle" alt="新住民"></a>
+			</div>
+					<div>
+				<a href="https://outdoor.moe.edu.tw/"  title="開啟「戶外教育」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_89082/螢幕擷取畫面 2025-10-02 133219.png" border="0" 
+						  align="absmiddle" alt="戶外教育"></a>
+			</div>
+			</fieldset>
+	<style type="text/css">
+		.MenuMediaLink img {
+			transition: box-shadow .2s linear, 
+							transform  .2s linear; 
+		}
+		
+		.MenuMediaLink img:hover {
+			box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+			transform: scale(1.008);
+		}
+	</style>
+	<fieldset id="D_8_34085" class="MenuMediaLink" style="margin-top: 0.5rem;">
+		<legend class="MenuMediaLinkTitle">網管專區<span style="display:none;">網管專區</span></legend>
+					<div>
+				<a href="http://www.kh.edu.tw/orgArch/departments_intro/U0/item9"  title="開啟「OPENID應用服務網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34085/OPENID.jpg" border="0" 
+						  align="absmiddle" alt="OPENID應用服務網"></a>
+			</div>
+					<div>
+				<a href="http://stuadm.kh.edu.tw/stuLogin.jsp"  title="開啟「學生修改openid密碼」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34085/改密碼.jpg" border="0" 
+						  align="absmiddle" alt="學生修改openid密碼"></a>
+			</div>
+					<div>
+				<a href="http://wireless.kh.edu.tw/"  title="開啟「無線網路服務說明」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34085/無線網路.jpg" border="0" 
+						  align="absmiddle" alt="無線網路服務說明"></a>
+			</div>
+					<div>
+				<a href="https://eliteracy.edu.tw/"  title="開啟「中小學網路素養與認知」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34085/網路素養.jpg" border="0" 
+						  align="absmiddle" alt="中小學網路素養與認知"></a>
+			</div>
+					<div>
+				<a href="http://www.gamerating.org.tw/"  title="開啟「網站分級」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34085/left5.jpg" border="0" 
+						  align="absmiddle" alt="網站分級"></a>
+			</div>
+					<div>
+				<a href="https://sp.tanet.edu.tw/"  title="開啟「學網測試」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34085/2.JPG" border="0" 
+						  align="absmiddle" alt="學網測試"></a>
+			</div>
+					<div>
+				<a href="https://wifi-auth.kh.edu.tw"  title="開啟「載具認證系統」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34085/1.JPG" border="0" 
+						  align="absmiddle" alt="載具認證系統"></a>
+			</div>
+			</fieldset>
+<div id="D_8_89229">
+  <iframe src='https://airtw.moenv.gov.tw/AirQuality_APIs/WebWidget.aspx?site=68&mode=easy' width='150px' height='200px' scrolling='yes' title="即時空品測站資訊看板"></iframe></div>
+
+				
+		<div id="MenuSpaceLB" style="height: 3.5rem;" aria-hidden="true">&nbsp;</div>
+	</div>    
+
+	<div id="DivContent" role="main" aria-label="主要內容區">       
+		  			
+				<div id="DivContentLeft">
+						<div id="DivAccessC" class="AccessC"><a id="AccessLinkC" class="AccessLink" accesskey="C" href="#AccessLinkC" title="中間主要內容區（Alt+C）">:::</a></div>
+		<style type="text/css">
+			#MedaiArea_89519 {
+				position: relative;
+				padding-top: 0.25rem;
+			}
+
+			#MediaUL_89519 {
+				position: absolute;
+				left: 0rem;
+				padding: 0rem;
+				margin: 0rem;
+				list-style: none;
+				transition: left .5s;
+			}
+
+			.MediaLI_89519 {
+				float: left;
+				padding: 0rem 0.25rem;
+				margin: 0rem;
+				list-style: none;
+			}	
+
+			.SinglePhotoLink_89519 {
+				padding: 0rem; 
+				margin:0rem; 
+				transition: box-shadow .2s linear,
+								transform  .2s linear;
+			}
+			
+			.SinglePhotoLink_89519:hover {
+				box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+				transform: scale(1.008);
+			}
+			
+			#PhotoControl_89519 {
+				border: 0.0625rem dotted #606060; 
+				border-top: 0.00625rem dotted #606060; 
+				background-color: #303030;
+			}
+			
+			.SinglePausePlay_89519 { 
+				padding: 0.125rem;
+				vertical-align: middle; 
+			}
+		</style>
+		<input type="hidden" name="403_89519" id="403_89519" value="Run">    
+		<div id="D_8_89519" class="MenuPhotoLink" aria-label="圖片連結輪播"
+			style="padding: 0.25rem;margin-top: 0rem;">
+			<div id="MedaiArea_89519">
+				<ul id="MediaUL_89519">
+											<li class="MediaLI_89519" id="media_0">
+						   <a href="https://www.facebook.com/share/p/1Hvk3qpb5P/"
+                        target="_blank" rel="noopener"
+                        title="開啟「115.3.13校慶運動會-閉幕頒獎」（此項連結開啟新視窗）"
+					  			aria-label="開啟「115.3.13校慶運動會-閉幕頒獎」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(0);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150313-閉幕頒獎.png" border="0" align="absmiddle"
+								   width="100%" alt="115.3.13校慶運動會-閉幕頒獎">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_1">
+						   <a href="https://www.facebook.com/share/p/188ddptYSW/"
+                        target="_blank" rel="noopener"
+                        title="開啟「115.3.13校慶運動會-大隊接力」（此項連結開啟新視窗）"
+					  			aria-label="開啟「115.3.13校慶運動會-大隊接力」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(1);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150313-大隊接力.png" border="0" align="absmiddle"
+								   width="100%" alt="115.3.13校慶運動會-大隊接力">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_2">
+						   <a href="https://www.facebook.com/share/p/1DFV1g3guD/"
+                        target="_blank" rel="noopener"
+                        title="開啟「115.3.13校慶運動會-趣味競賽-同心協力」（此項連結開啟新視窗）"
+					  			aria-label="開啟「115.3.13校慶運動會-趣味競賽-同心協力」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(2);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150313-同心協力.png" border="0" align="absmiddle"
+								   width="100%" alt="115.3.13校慶運動會-趣味競賽-同心協力">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_3">
+						   <a href="https://www.facebook.com/share/p/1Dc2AmqLFS/"
+                        target="_blank" rel="noopener"
+                        title="開啟「115.3.13校慶運動會-趣味競賽-愛的套圈圈」（此項連結開啟新視窗）"
+					  			aria-label="開啟「115.3.13校慶運動會-趣味競賽-愛的套圈圈」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(3);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150313愛的套圈圈.png" border="0" align="absmiddle"
+								   width="100%" alt="115.3.13校慶運動會-趣味競賽-愛的套圈圈">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_4">
+						   <a href="https://www.facebook.com/share/p/1B4qPdCcV8/"
+                        target="_blank" rel="noopener"
+                        title="開啟「114學年度校慶運動會--拔河比賽」（此項連結開啟新視窗）"
+					  			aria-label="開啟「114學年度校慶運動會--拔河比賽」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(4);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150313拔河.png" border="0" align="absmiddle"
+								   width="100%" alt="114學年度校慶運動會--拔河比賽">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_5">
+						   <a href="https://www.facebook.com/media/set/?set=oa.1435721034675523&type=3&__cft__[0]=AZZ-v3TuqDQKSLI89tKi-uXkcEUcyhS8XZDq8cddjJH9QUHL3EVFNrj8vQcuAWH9YF26tyxDBErw75YiDFrTUAT5kygzU4MFe0EJDpJhTMjLzsYBMzee9ZpL5j"
+                        target="_blank" rel="noopener"
+                        title="開啟「114學年度校慶運動會--馬拉松比賽」（此項連結開啟新視窗）"
+					  			aria-label="開啟「114學年度校慶運動會--馬拉松比賽」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(5);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/114馬拉松.jpg" border="0" align="absmiddle"
+								   width="100%" alt="114學年度校慶運動會--馬拉松比賽">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_6">
+						   <a href="https://www.facebook.com/media/set/?set=oa.887657910316336&type=3&__cft__[0]=AZY7VffbNbzJEEcPh4lMyXTuvuG4L5vtkTkvcLeKHjrzOTmF23a6jdwEs5Fbq2jz7PmZ0RSRBoWtDn2IqOisimIPwA-TyegnrCoyOYZ75kotU0RFGj-v2u17e5N"
+                        target="_blank" rel="noopener"
+                        title="開啟「1150123英語歌唱比賽」（此項連結開啟新視窗）"
+					  			aria-label="開啟「1150123英語歌唱比賽」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(6);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150123英語歌唱比賽.png" border="0" align="absmiddle"
+								   width="100%" alt="1150123英語歌唱比賽">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_7">
+						   <a href="https://www.facebook.com/share/p/184Z7Q6EJb/"
+                        target="_blank" rel="noopener"
+                        title="開啟「115.01.16 八年級職業參訪」（此項連結開啟新視窗）"
+					  			aria-label="開啟「115.01.16 八年級職業參訪」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(7);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150116參訪.png" border="0" align="absmiddle"
+								   width="100%" alt="115.01.16 八年級職業參訪">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_8">
+						   <a href="https://www.facebook.com/share/p/1DDBibUAsj/"
+                        target="_blank" rel="noopener"
+                        title="開啟「115.01.16 七年級手擲機」（此項連結開啟新視窗）"
+					  			aria-label="開啟「115.01.16 七年級手擲機」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(8);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1150116手擲機.png" border="0" align="absmiddle"
+								   width="100%" alt="115.01.16 七年級手擲機">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_9">
+						   <a href="https://www.facebook.com/share/p/1Ggj5JARNY/"
+                        target="_blank" rel="noopener"
+                        title="開啟「114.12.24聖誕快閃活動」（此項連結開啟新視窗）"
+					  			aria-label="開啟「114.12.24聖誕快閃活動」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(9);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/1141224聖誕活動.png" border="0" align="absmiddle"
+								   width="100%" alt="114.12.24聖誕快閃活動">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_10">
+						   <a href="https://www.facebook.com/share/p/1DGiFVTzcB/"
+                        target="_blank" rel="noopener"
+                        title="開啟「114年教育會考成績優秀獲教育局獎勵」（此項連結開啟新視窗）"
+					  			aria-label="開啟「114年教育會考成績優秀獲教育局獎勵」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(10);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/114年教育會考成績優秀獲教育局獎勵.png" border="0" align="absmiddle"
+								   width="100%" alt="114年教育會考成績優秀獲教育局獎勵">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_11">
+						   <a href="https://www.facebook.com/share/p/1Svxfv8j3c/"
+                        target="_blank" rel="noopener"
+                        title="開啟「20250926教師節敬師活動」（此項連結開啟新視窗）"
+					  			aria-label="開啟「20250926教師節敬師活動」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(11);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/螢幕擷取畫面 2025-11-05 153953.png" border="0" align="absmiddle"
+								   width="100%" alt="20250926教師節敬師活動">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_12">
+						   <a href="https://www.facebook.com/share/p/1GewCCtHQA/"
+                        target="_blank" rel="noopener"
+                        title="開啟「113學年度戶外教學(台江)」（此項連結開啟新視窗）"
+					  			aria-label="開啟「113學年度戶外教學(台江)」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(12);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/螢幕擷取畫面 2025-11-05 154129.png" border="0" align="absmiddle"
+								   width="100%" alt="113學年度戶外教學(台江)">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_13">
+						   <a href="https://www.facebook.com/share/p/1H3LvLp1kS/"
+                        target="_blank" rel="noopener"
+                        title="開啟「1140521 九年級中山工商入班宣導暨實作」（此項連結開啟新視窗）"
+					  			aria-label="開啟「1140521 九年級中山工商入班宣導暨實作」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(13);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/螢幕擷取畫面 2025-11-05 154433.png" border="0" align="absmiddle"
+								   width="100%" alt="1140521 九年級中山工商入班宣導暨實作">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_14">
+						   <a href="https://www.facebook.com/share/p/1C1zkQDg4S/"
+                        target="_blank" rel="noopener"
+                        title="開啟「1140326八年級產業參訪-中外餅鋪」（此項連結開啟新視窗）"
+					  			aria-label="開啟「1140326八年級產業參訪-中外餅鋪」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(14);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/螢幕擷取畫面 2025-11-05 154529.png" border="0" align="absmiddle"
+								   width="100%" alt="1140326八年級產業參訪-中外餅鋪">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_15">
+						   <a href="https://www.facebook.com/share/p/17QH6SyJ4V/"
+                        target="_blank" rel="noopener"
+                        title="開啟「1131129校園藝術 to go 體驗」（此項連結開啟新視窗）"
+					  			aria-label="開啟「1131129校園藝術 to go 體驗」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(15);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/螢幕擷取畫面 2025-11-05 154855.png" border="0" align="absmiddle"
+								   width="100%" alt="1131129校園藝術 to go 體驗">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_16">
+						   <a href="https://www.facebook.com/share/p/17TV3W2wL7/"
+                        target="_blank" rel="noopener"
+                        title="開啟「1131211八年級籃球競賽」（此項連結開啟新視窗）"
+					  			aria-label="開啟「1131211八年級籃球競賽」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(16);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/螢幕擷取畫面 2025-11-05 155025.png" border="0" align="absmiddle"
+								   width="100%" alt="1131211八年級籃球競賽">
+                     </a>
+						</li>
+											<li class="MediaLI_89519" id="media_17">
+						   <a href="https://www.facebook.com/share/p/1Mk8W3tB9t/"
+                        target="_blank" rel="noopener"
+                        title="開啟「1140604畢業典禮」（此項連結開啟新視窗）"
+					  			aria-label="開啟「1140604畢業典禮」（此項連結開啟新視窗）"
+							   onMouseover="javascript:Ticker_89519('P');"
+							   onMouseout="javascript:Ticker_89519('R');"
+								onFocus="javascript:GoTo_89519(17);">
+								<img class="SinglePhotoLink_89519"
+								   src="/upload/8/403_89519/螢幕擷取畫面 2025-11-05 153838.png" border="0" align="absmiddle"
+								   width="100%" alt="1140604畢業典禮">
+                     </a>
+						</li>
+									</ul>
+			</div>
+		</div>
+		<div id="PhotoControl_89519">
+			<a role="button" id="PhotoPausePlay_89519" href="javascript:GoSwitch_89519('Pause');" title="暫停輪流播放「圖片連結輪播」內容">
+				<img id="PausePlayImg_89519" class="SinglePausePlay_89519" src="/media/style/pause.png" width="20" height="20" alt="暫停輪播「圖片連結輪播」">
+			</a>
+			<span style="float:right;">
+				<a role="button" id="PhotoPrev_89519"
+					title="回到上一張" 
+					href="javascript:GoToPos_89519('Previous');">
+					<img id="PrevImg_89519" class="SinglePausePlay_89519" style="border: none;" src="/media/style/prev.png" width="20" height="20" alt="上一張"></a>
+				<span id="PhotoCount_89519" class="ContentMemo" 
+						style="border-bottom: none;margin:0rem;padding:0rem;"></span>
+				<a role="button" id="PhotoNext_89519"
+					title="前往下一張" 
+					href="javascript:GoToPos_89519('Next');">
+					<img id="NextImg_89519" class="SinglePausePlay_89519" style="border: none;" src="/media/style/next.png" width="20" height="20" alt="下一張"></a>
+			</span>
+		</div>
+		<script language="Javascript"> 
+			var _D_89519      = document.getElementById("D_8_89519");
+			var _Width_89519  = roundTo(_D_89519.offsetWidth, 4) - 10;
+			var _Height_89519 = roundTo(_Width_89519 / 16 * 9, 4);
+
+			var _MedaiArea_89519 = document.getElementById("MedaiArea_89519");
+			var _MediaUL_89519   = document.getElementById("MediaUL_89519");
+			var _MediaLI_89519   = document.querySelectorAll(".MediaLI_89519");
+			ChangeWidth_89519();
+			
+			var x_89519 = 0;
+			var _Seconds_89519 = 3000;
+			var _PCount_89519  = document.getElementById("PhotoCount_89519");
+			_PCount_89519.innerHTML = (x_89519 + 1) + "/" + 18;
+
+			timerONE_89519 = window.setTimeout("show_89519()", _Seconds_89519); 
+
+			function ChangeWidth_89519() {        
+				_MedaiArea_89519.style.width  = (_Width_89519  * 0.0625) + "rem";
+				_MedaiArea_89519.style.height = (_Height_89519 * 0.0625) + "rem";
+
+				_MediaUL_89519.style.width = (_Width_89519 * 18 * 0.0625) + "rem";
+				_MediaLI_89519.forEach(_e => _e.style.width = ((_Width_89519 - 8) * 0.0625) + "rem");
+			}		
+
+							var _ResizeObserver_89519 = new ResizeObserver(function () {
+					var _TmpW_89519  = roundTo(_D_89519.offsetWidth, 4) - 10;
+					if ( _Width_89519 != _TmpW_89519 ) {
+						_Width_89519  = _TmpW_89519;
+						_Height_89519 = roundTo(_Width_89519 / 16 * 9, 4);
+						ChangeWidth_89519();
+						GoTo_89519(x_89519, "Run");
+					}
+				});
+				_ResizeObserver_89519.observe(_D_89519);
+			
+			// 四捨五入 _N 到 小數 _Dec 位
+			function roundTo(_N, _Dec) {
+				const factor = 10 ** _Dec;
+				return Math.round(_N * factor) / factor;
+			}
+
+			function show_89519(_Con = "") {        
+				var _N;
+				x_89519 ++;
+				if ( x_89519 >= 18 )
+					x_89519 = 0;
+
+				_N = x_89519;
+				_PCount_89519.innerHTML = (_N + 1) + "/" + 18;
+				
+				_MediaUL_89519.style.left = ((_Width_89519 * _N * -0.0625)) + "rem";				
+
+				if ( _Con == "" ) timerONE_89519 = window.setTimeout("show_89519()", _Seconds_89519); 
+			}			
+
+			function GoToPos_89519(_P) {
+				var _N = 0;
+				if ( _P == "Previous" ) {
+					_N = x_89519 - 1;
+					if ( _N < 0 ) _N = 18 - 1;
+				}
+				if ( _P == "Next" ) {
+					_N = x_89519 + 1;
+					if ( _N >= 18 ) _N = 0;
+				}
+
+				GoTo_89519(_N, "Run");			
+			}
+
+			function GoTo_89519(_N, _PR = "" ) {
+				if ( !_PR ) GoSwitch_89519('Pause');
+				var _TransX = _Width_89519 * _N;
+				_MediaUL_89519.style.left = ((_TransX * -0.0625)) + "rem";				
+				_PCount_89519.innerHTML = (_N + 1) + "/" + 18;
+				x_89519 = _N;	
+			}
+
+			function GoSwitch_89519(_S) {
+				var Status       = document.getElementById("403_89519");
+				var PausePlay    = document.getElementById("PhotoPausePlay_89519");
+				var PausePlayImg = document.getElementById("PausePlayImg_89519");
+				if ( _S == "Pause" ) {
+					PausePlay.href   = "javascript:GoSwitch_89519('Run');";
+					PausePlay.title  = "繼續輪流播放「圖片連結輪播」內容";
+					PausePlayImg.src = "/media/style/play.png";
+					PausePlayImg.alt = "繼續輪播「圖片連結輪播」";
+					Ticker_89519('Pause');
+				}
+				else if ( _S == "Run" ) {
+					PausePlay.href   = "javascript:GoSwitch_89519('Pause');";
+					PausePlay.title  = "暫停輪流播放「圖片連結輪播」內容";
+					PausePlayImg.src = "/media/style/pause.png";
+					PausePlayImg.alt = "暫停輪播「圖片連結輪播」";
+					Ticker_89519('Run');
+				}
+				Status.value = _S;
+			}
+
+			function Ticker_89519(_T = "") {
+				var Status = document.getElementById("403_89519");
+				if ( _T == "" ) _T = "R";
+				if ( _T == "P" || _T == "Pause" )
+					clearTimeout(timerONE_89519);
+				else if ( (_T == "R" && Status.value == "Run") || _T == "Run" )
+					timerONE_89519 = window.setTimeout("show_89519()", _Seconds_89519); 
+			}
+
+						if ( ( "ontouchstart" in window) || 
+					window.DocumentTouch && document instanceof DocumentTouch ) {
+
+								var moveX_89519;
+
+								_MedaiArea_89519.addEventListener("touchstart", function(e) {
+
+										Ticker_89519('P');
+
+										this.startX = e.touches[0].pageX;
+				}, false);
+
+								_MedaiArea_89519.addEventListener('touchmove', function(e) {
+
+										moveX_89519 = e.touches[0].pageX - this.startX;
+
+					// 依據滑動距離與元素排序判斷移動元素 left 位置
+					if ( (x_89519 >= 0                   && 
+							x_89519 != 17 && 
+							moveX_89519 < 0 ) 
+							|| 
+						  (x_89519 <= 17 && 
+							x_89519 != 0                   && 
+							moveX_89519 > 0 ) 
+						) {
+						_MediaUL_89519.style.transition = "left 0s";
+						_MediaUL_89519.style.left = (((_Width_89519 * x_89519 * -1) + moveX_89519) * 0.0625) + "rem";
+
+					}
+					else
+						moveX_89519 = 0;
+				}, false);
+
+								_MedaiArea_89519.addEventListener('touchend', function(e) {
+
+										if ( moveX_89519 != 0 ) {
+						_MediaUL_89519.style.transition = "";
+						
+												var _N = 0;
+						if ( moveX_89519 < 0 ) {
+							_N = x_89519 + 1;
+							if ( _N >= 18 ) _N = 18 - 1;
+							x_89519 = _N;
+						}
+												else {
+							_N = x_89519 - 1;
+							if ( _N < 0 ) _N = 0;
+							x_89519 = _N;
+						}
+
+						GoTo_89519(_N, "Run");
+					}
+										Ticker_89519('R');
+
+				}, false);	
+			}
+					</script>
+							<fieldset id="D_8_12962_H" class="ContentFrameHome">
+							<legend><h2 class="ContentFrameHomeTitle" style="margin:0rem auto 0rem;"><img src="/upload/8/menu/重要消息.jpg" border="0" align="absmiddle" alt="重要消息"></h2><span style="display:none;">重要消息</span></legend>
+							<div class="ContentMain" >
+		<div style="clear: both;"></div>
+				<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/16&nbsp;&nbsp;<a title="檢視「115學年度新生報到於3/28上午舉行現場報到，亦可以採線上報到。」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0&DataId=397147&page=1&Work=View">教務處：115學年度新生報到於3/28上午舉行現場報到，亦可以採線上報到。 </a>
+					<font color="#ff0000" title="置頂">↑</font>					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2023/02/16&nbsp;&nbsp;<a title="檢視「高雄市立鳥松國民中學學生獎懲實施辦法」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0&DataId=263334&page=1&Work=View">學務處：高雄市立鳥松國民中學學生獎懲實施辦法 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件"><font color="#ff0000" title="置頂">↑</font>					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/05&nbsp;&nbsp;<a title="檢視「鳥松國中校園開放時間」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0&DataId=395522&page=1&Work=View">總務處：鳥松國中校園開放時間 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/01/20&nbsp;&nbsp;<a title="檢視「115年1月15日校務會議之提案通過公告」內容（3 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0&DataId=391505&page=1&Work=View">總務處：115年1月15日校務會議之提案通過公告 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="3 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2025/10/03&nbsp;&nbsp;<a title="檢視「114年10月15日下午4時10分於本校2樓會議室召開114學年度第2次校務會議」內容（2 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0&DataId=379916&page=1&Work=View">總務處：114年10月15日下午4時10分於本校2樓會議室召開114學年度第2次校務會議 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="2 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2025/09/17&nbsp;&nbsp;<a title="檢視「茲感謝 高雄市開陽慈心會」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0&DataId=377499&page=1&Work=View">總務處：茲感謝 高雄市開陽慈心會 </a>
+										</div>
+				</div>
+			</div>
+		</div>
+<div class="ContentPageChange">
+				<a href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=12962&SubMenuId=0" title="檢視更多「重要消息」的內容">更多的重要消息 ...</a>	      	
+		   
+</div>
+
+                           
+						</fieldset>
+											<fieldset id="D_8_208_H" class="ContentFrameHome">
+							<legend><h2 class="ContentFrameHomeTitle" style="margin:0rem auto 0rem;"><img src="/upload/8/menu/最新消息.jpg" border="0" align="absmiddle" alt="最新訊息"></h2><span style="display:none;">最新訊息</span></legend>
+							<div class="ContentMain" >
+		<div style="clear: both;"></div>
+				<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/16&nbsp;&nbsp;<a title="檢視「114學年度第2學期第1次段考 於3/26、3/27舉行」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0&DataId=397005&page=1&Work=View">教務處：114學年度第2學期第1次段考 於3/26、3/27舉行 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件"><font color="#ff0000" title="置頂">↑</font>					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/20&nbsp;&nbsp;<a title="檢視「國家教育研究院為商借教師辦理十二年國民基本教育課程研究發展業務」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0&DataId=397915&page=1&Work=View">教務處：國家教育研究院為商借教師辦理十二年國民基本教育課程研究發展業務 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/20&nbsp;&nbsp;<a title="檢視「臺北市立大學辦理「2026年原住民族語E樂園繪本腳本徵稿活動」」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0&DataId=397913&page=1&Work=View">教務處：臺北市立大學辦理「2026年原住民族語E樂園繪本腳本徵稿活動」 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/20&nbsp;&nbsp;<a title="檢視「115年度中等教育季刊徵稿海報」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0&DataId=397910&page=1&Work=View">教務處：115年度中等教育季刊徵稿海報 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/20&nbsp;&nbsp;<a title="檢視「「2026AI&STEAM暨聯合國永續發展目標夏令營」」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0&DataId=397898&page=1&Work=View">教務處：「2026AI&STEAM暨聯合國永續發展目標夏令營」 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/20&nbsp;&nbsp;<a title="檢視「114學年度「創客課程分享活動」實施計畫」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0&DataId=397894&page=1&Work=View">教務處：114學年度「創客課程分享活動」實施計畫 </a>
+										</div>
+				</div>
+			</div>
+		</div>
+<div class="ContentPageChange">
+				<a href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0" title="檢視更多「最新訊息」的內容">更多的最新訊息 ...</a>	      	
+		   
+</div>
+
+                           
+						</fieldset>
+											<fieldset id="D_8_58508_H" class="ContentFrameHome">
+							<legend><h2 class="ContentFrameHomeTitle" style="margin:0rem auto 0rem;"><img src="/upload/8/menu/活動照片_1_1.jpg" border="0" align="absmiddle" alt="活動照片"></h2><span style="display:none;">活動照片</span></legend>
+							<div class="ContentMain" >
+		<div style="clear: both;"></div>
+				<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-學生才藝表演」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397281&page=1&Work=View">115.3.13校慶運動會-學生才藝表演 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-閉幕頒獎」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397280&page=1&Work=View">115.3.13校慶運動會-閉幕頒獎 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-趣味競賽-同心協力」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397279&page=1&Work=View">115.3.13校慶運動會-趣味競賽-同心協力 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-大隊接力」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397277&page=1&Work=View">115.3.13校慶運動會-大隊接力 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-400M接力」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397275&page=1&Work=View">115.3.13校慶運動會-400M接力 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-100M、200M」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397270&page=1&Work=View">115.3.13校慶運動會-100M、200M </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-趣味競賽-愛的套圈圈」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397267&page=1&Work=View">115.3.13校慶運動會-趣味競賽-愛的套圈圈 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-開幕典禮」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397260&page=1&Work=View">115.3.13校慶運動會-開幕典禮 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/17&nbsp;&nbsp;<a title="檢視「115.3.13校慶運動會-拔河」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=397258&page=1&Work=View">115.3.13校慶運動會-拔河 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/11&nbsp;&nbsp;<a title="檢視「115.03.10 114學年度校慶運動會-馬拉松比賽」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0&DataId=396507&page=1&Work=View">115.03.10 114學年度校慶運動會-馬拉松比賽 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+		</div>
+<div class="ContentPageChange">
+				<a href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=58508&SubMenuId=0" title="檢視更多「活動照片」的內容">更多的活動照片 ...</a>	      	
+		   
+</div>
+
+                           
+						</fieldset>
+											<fieldset id="D_8_34091_H" class="ContentFrameHome">
+							<legend><h2 class="ContentFrameHomeTitle" style="margin:0rem auto 0rem;"><img src="/upload/8/menu/升學專區.jpg" border="0" align="absmiddle" alt="升學專區"></h2><span style="display:none;">升學專區</span></legend>
+							<div class="ContentMain" >
+		<div style="clear: both;"></div>
+				<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/11&nbsp;&nbsp;<a title="檢視「115學年度高級中等學校特色招生專業群科甄選入學簡章彙編」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=34091&SubMenuId=0&DataId=396524&page=1&Work=View">115學年度高級中等學校特色招生專業群科甄選入學簡章彙編 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件"><font color="#ff0000" title="置頂">↑</font>					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/02&nbsp;&nbsp;<a title="檢視「115學年度高雄區國民中學技藝技能優良學生甄選入學簡章 勘誤表」內容（2 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=34091&SubMenuId=0&DataId=394705&page=1&Work=View">115學年度高雄區國民中學技藝技能優良學生甄選入學簡章 勘誤表 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="2 個附件"><font color="#ff0000" title="置頂">↑</font>					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/02&nbsp;&nbsp;<a title="檢視「115學年度高雄區國民中學技藝技能優良學生甄選入學簡章」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=34091&SubMenuId=0&DataId=394760&page=1&Work=View">115學年度高雄區國民中學技藝技能優良學生甄選入學簡章 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件"><font color="#ff0000" title="置頂">↑</font>					</div>
+				</div>
+			</div>
+		</div>
+<div class="ContentPageChange">
+				<a href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=34091&SubMenuId=0" title="檢視更多「升學專區」的內容">更多的升學專區 ...</a>	      	
+		   
+</div>
+
+                           
+						</fieldset>
+											<fieldset id="D_8_11774_H" class="ContentFrameHome">
+							<legend><h2 class="ContentFrameHomeTitle" style="margin:0rem auto 0rem;"><img src="/upload/8/menu/教師研習.jpg" border="0" align="absmiddle" alt="教師研習專區"></h2><span style="display:none;">教師研習專區</span></legend>
+							<div class="ContentMain" >
+		<div style="clear: both;"></div>
+				<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/20&nbsp;&nbsp;<a title="檢視「「114學年度來一杯自主學習能量飲Part2：自主學習這樣做就好!」」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=11774&SubMenuId=0&DataId=397901&page=1&Work=View">教務處：「114學年度來一杯自主學習能量飲Part2：自主學習這樣做就好!」 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/20&nbsp;&nbsp;<a title="檢視「普通班教師特殊教育專業知能研習」內容（1 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=11774&SubMenuId=0&DataId=397857&page=1&Work=View">輔導室：普通班教師特殊教育專業知能研習 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="1 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/19&nbsp;&nbsp;<a title="檢視「國立清華大學辦理「雙閱讀素養教學領導工作坊」」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=11774&SubMenuId=0&DataId=397774&page=1&Work=View">教務處：國立清華大學辦理「雙閱讀素養教學領導工作坊」 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2026/03/19&nbsp;&nbsp;<a title="檢視「「115年提升國中小女學生科學與數學學習興趣-教師增能工作坊」」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=11774&SubMenuId=0&DataId=397772&page=1&Work=View">教務處：「115年提升國中小女學生科學與數學學習興趣-教師增能工作坊」 </a>
+										</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2026/03/19&nbsp;&nbsp;<a title="檢視「國立科學工藝博物館辦理「博物館網站資源與AI應用」教師研習活動」內容" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=11774&SubMenuId=0&DataId=397737&page=1&Work=View">總務處：國立科學工藝博物館辦理「博物館網站資源與AI應用」教師研習活動 </a>
+										</div>
+				</div>
+			</div>
+		</div>
+<div class="ContentPageChange">
+				<a href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=11774&SubMenuId=0" title="檢視更多「教師研習專區」的內容">更多的教師研習專區 ...</a>	      	
+		   
+</div>
+
+                           
+						</fieldset>
+											<fieldset id="D_8_40900_H" class="ContentFrameHome">
+							<legend><h2 class="ContentFrameHomeTitle" style="margin:0rem auto 0rem;"><img src="/upload/8/menu/人事訊息.jpg" border="0" align="absmiddle" alt="人事訊息"></h2><span style="display:none;">人事訊息</span></legend>
+							<div class="ContentMain" >
+		<div style="clear: both;"></div>
+				<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2025/03/08&nbsp;&nbsp;<a title="檢視「現職軍公教不得赴陸設籍、領用中國大陸護 照、申領陸方身分證、定居證及居住證」內容（2 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=40900&SubMenuId=0&DataId=355346&page=1&Work=View">人事室：現職軍公教不得赴陸設籍、領用中國大陸護 照、申領陸方身分證、定居證及居住證 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="2 個附件"><font color="#ff0000" title="置頂">↑</font>					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListEven">
+					2025/04/23&nbsp;&nbsp;<a title="檢視「有關落實臺灣地區與大陸地區人民關係條例(下稱兩岸條例)兩岸單一戶籍相關規定事宜」內容（3 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=40900&SubMenuId=0&DataId=360717&page=1&Work=View">人事室：有關落實臺灣地區與大陸地區人民關係條例(下稱兩岸條例)兩岸單一戶籍相關規定事宜 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="3 個附件">					</div>
+				</div>
+			</div>
+					<div class="ContentBody">
+				<div class="ContentList">
+											<div class="ContentListOdd">
+					2025/04/16&nbsp;&nbsp;<a title="檢視「教育部公文轉知」內容（3 個附件）" href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=40900&SubMenuId=0&DataId=359831&page=1&Work=View">人事室：教育部公文轉知 </a>
+					&nbsp;<img src="/media/public/attach.png" border="0" alt="3 個附件">					</div>
+				</div>
+			</div>
+		</div>
+<div class="ContentPageChange">
+				<a href="/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=40900&SubMenuId=0" title="檢視更多「人事訊息」的內容">更多的人事訊息 ...</a>	      	
+		   
+</div>
+
+                           
+						</fieldset>
+									</div>
+				
+			<div id="DivContentRight" role="navigation" aria-label="右方相關連結區">
+					<div id="DivAccessR" class="AccessR"><a id="AccessLinkR" class="AccessLink" accesskey="R" href="#AccessLinkR" title="右方相關連結區（Alt+R）">:::</a></div>
+	<style type="text/css">
+		.MenuMediaLink img {
+			transition: box-shadow .2s linear, 
+							transform  .2s linear; 
+		}
+		
+		.MenuMediaLink img:hover {
+			box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+			transform: scale(1.008);
+		}
+	</style>
+	<fieldset id="D_8_34082" class="MenuMediaLink" style="margin-top: 0rem;">
+		<legend class="MenuMediaLinkTitle">重要連結<span style="display:none;">重要連結</span></legend>
+					<div>
+				<a href="https://www.facebook.com/groups/Nsm2017"  title="開啟「鳥松國中FB社團」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/nsmFB.jpg" border="0" 
+						  align="absmiddle" alt="鳥松國中FB社團"></a>
+			</div>
+					<div>
+				<a href="https://www.nsm.kh.edu.tw/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=208&SubMenuId=0&DataId=187967&page=1&Work=View&NowMainId=0&NowSubId=0"  title="開啟「教育帳號」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/OpenID.jpg" border="0" 
+						  align="absmiddle" alt="教育帳號"></a>
+			</div>
+					<div>
+				<a href="https://affairs.kh.edu.tw/6058/page/view/42"  title="開啟「鳥松國中課程計畫」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/課程計畫3.jpg" border="0" 
+						  align="absmiddle" alt="鳥松國中課程計畫"></a>
+			</div>
+					<div>
+				<a href="https://1campus.net/d/nsm.kh.edu.tw?dn=nsm.kh.edu.tw"  title="開啟「成績系統」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/成績系統3.jpg" border="0" 
+						  align="absmiddle" alt="成績系統"></a>
+			</div>
+					<div>
+				<a href="https://kh.entry.edu.tw/signup.php"  title="開啟「志願選填」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/志願選填3.jpg" border="0" 
+						  align="absmiddle" alt="志願選填"></a>
+			</div>
+					<div>
+				<a href="https://exam.tcte.edu.tw/"  title="開啟「補救測驗」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/學習扶助3.jpg" border="0" 
+						  align="absmiddle" alt="補救測驗"></a>
+			</div>
+					<div>
+				<a href="https://www.nsm.kh.edu.tw/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=79617&SubMenuId=0&NowMainId=79617&NowSubId=0"  title="開啟「教學正常化」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/教學正常化4.jpg" border="0" 
+						  align="absmiddle" alt="教學正常化"></a>
+			</div>
+					<div>
+				<a href="https://www.nsm.kh.edu.tw/view/index.php?WebID=8&MainType=0&SubType=101&MainMenuId=60228&SubMenuId=60229&NowMainId=60228&NowSubId=60229"  title="開啟「雙語教學」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/雙語教學3.jpg" border="0" 
+						  align="absmiddle" alt="雙語教學"></a>
+			</div>
+					<div>
+				<a href="http://affairs.kh.edu.tw/4576"  title="開啟「公開授課」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/公開授課3.jpg" border="0" 
+						  align="absmiddle" alt="公開授課"></a>
+			</div>
+					<div>
+				<a href="https://www.nsm.kh.edu.tw/view/index.php?WebID=8&MainType=101&SubType=0&MainMenuId=79098&SubMenuId=0&NowMainId=79098&NowSubId=0"  title="開啟「校外人士」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34082/校外人士3.jpg" border="0" 
+						  align="absmiddle" alt="校外人士"></a>
+			</div>
+			</fieldset>
+<div id="D_8_77740">
+  <iframe src='https://kntt.kh.edu.tw/?k=10.16.62'width='172' height='160' title="網路直通車"></iframe></div>
+
+	<style type="text/css">
+		.MenuMediaLink img {
+			transition: box-shadow .2s linear, 
+							transform  .2s linear; 
+		}
+		
+		.MenuMediaLink img:hover {
+			box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+			transform: scale(1.008);
+		}
+	</style>
+	<fieldset id="D_8_34083" class="MenuMediaLink" style="margin-top: 0.5rem;">
+		<legend class="MenuMediaLinkTitle">線上學習<span style="display:none;">線上學習</span></legend>
+					<div>
+				<a href="https://adl.edu.tw/HomePage/home/index.php"  title="開啟「因材網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/logo-adl_pi.png" border="0" 
+						  align="absmiddle" alt="因材網"></a>
+			</div>
+					<div>
+				<a href="http://netholiday.kh.edu.tw/"  title="開啟「飆作業」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/飆.jpg" border="0" 
+						  align="absmiddle" alt="飆作業"></a>
+			</div>
+					<div>
+				<a href="https://happyread.kh.edu.tw/readerquiz/"  title="開啟「愛閱網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/愛閱網.jpg" border="0" 
+						  align="absmiddle" alt="愛閱網"></a>
+			</div>
+					<div>
+				<a href="https://drlive.kh.edu.tw/drlive/"  title="開啟「達學堂」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/1.JPG" border="0" 
+						  align="absmiddle" alt="達學堂"></a>
+			</div>
+					<div>
+				<a href="http://www.junyiacademy.org/"  title="開啟「均一平台」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/均一.jpg" border="0" 
+						  align="absmiddle" alt="均一平台"></a>
+			</div>
+					<div>
+				<a href="https://cirn.moe.edu.tw/Facet/Home/index.aspx?HtmlName=Home&"  title="開啟「國中小課程與教學資源整合平臺」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/3.JPG" border="0" 
+						  align="absmiddle" alt="國中小課程與教學資源整合平臺"></a>
+			</div>
+					<div>
+				<a href="https://cloud.edu.tw/"  title="開啟「教育雲」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-10-02 125946.png" border="0" 
+						  align="absmiddle" alt="教育雲"></a>
+			</div>
+					<div>
+				<a href="https://nsm.teamslite.com.tw/v2/login.html"  title="開啟「翰林雲端學院」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-10-02 130150.png" border="0" 
+						  align="absmiddle" alt="翰林雲端學院"></a>
+			</div>
+					<div>
+				<a href="https://nsmkh.ailead365.com/auth/login"  title="開啟「自主學習中心」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-10-02 130246.png" border="0" 
+						  align="absmiddle" alt="自主學習中心"></a>
+			</div>
+					<div>
+				<a href="https://etlady.tw/KHSSL/"  title="開啟「郊區學校聯盟」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-10-02 131345.png" border="0" 
+						  align="absmiddle" alt="郊區學校聯盟"></a>
+			</div>
+					<div>
+				<a href="https://www.egame.kh.edu.tw/login"  title="開啟「E-game」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-10-02 133919.png" border="0" 
+						  align="absmiddle" alt="E-game"></a>
+			</div>
+					<div>
+				<a href="https://contest.hlc.edu.tw/typing/content.asp?lang=2"  title="開啟「英打練習」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-10-02 134207.png" border="0" 
+						  align="absmiddle" alt="英打練習"></a>
+			</div>
+					<div>
+				<a href="https://eliteracy.edu.tw/"  title="開啟「中小學數位素養教育資源網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-11-13 095957.png" border="0" 
+						  align="absmiddle" alt="中小學數位素養教育資源網"></a>
+			</div>
+					<div>
+				<a href="https://eliteracy.edu.tw/Shorts/xiaohongshu.html"  title="開啟「不迷小紅書，青春 不迷途」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/不迷小紅書，青春不迷途ATT2.png" border="0" 
+						  align="absmiddle" alt="不迷小紅書，青春 不迷途"></a>
+			</div>
+					<div>
+				<a href="https://kh.etesting.com.tw/"  title="開啟「English Test Online(Kaohsiung)」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34083/螢幕擷取畫面 2025-12-09 092118.png" border="0" 
+						  align="absmiddle" alt="English Test Online(Kaohsiung)"></a>
+			</div>
+			</fieldset>
+	<style type="text/css">
+		.MenuMediaLink img {
+			transition: box-shadow .2s linear, 
+							transform  .2s linear; 
+		}
+		
+		.MenuMediaLink img:hover {
+			box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+			transform: scale(1.008);
+		}
+	</style>
+	<fieldset id="D_8_34084" class="MenuMediaLink" style="margin-top: 0.5rem;">
+		<legend class="MenuMediaLinkTitle">主題網站<span style="display:none;">主題網站</span></legend>
+					<div>
+				<a href="https://affairs.kh.edu.tw/4903"  title="開啟「鳥松國中本土教育成果網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34084/本土.jpg" border="0" 
+						  align="absmiddle" alt="鳥松國中本土教育成果網"></a>
+			</div>
+					<div>
+				<a href="https://affairs.kh.edu.tw/6406"  title="開啟「鳥松國中交通安全網」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34084/交通.jpg" border="0" 
+						  align="absmiddle" alt="鳥松國中交通安全網"></a>
+			</div>
+					<div>
+				<a href="https://affairs.kh.edu.tw/6526"  title="開啟「防治學生藥物濫用」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34084/藥物2.jpg" border="0" 
+						  align="absmiddle" alt="防治學生藥物濫用"></a>
+			</div>
+					<div>
+				<a href="http://affairs.kh.edu.tw/12/upload/upload_list/27"  title="開啟「性別平等專區」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34084/性別平等專區.jpg" border="0" 
+						  align="absmiddle" alt="性別平等專區"></a>
+			</div>
+					<div>
+				<a href="https://enews.kh.edu.tw/antibully/script1/index.asp?screen=1024"  title="開啟「反黑幫防詐騙宣導」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34084/螢幕擷取畫面 2025-11-27 112335.png" border="0" 
+						  align="absmiddle" alt="反黑幫防詐騙宣導"></a>
+			</div>
+			</fieldset>
+	<style type="text/css">
+		.MenuMediaLink img {
+			transition: box-shadow .2s linear, 
+							transform  .2s linear; 
+		}
+		
+		.MenuMediaLink img:hover {
+			box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.8);
+			transform: scale(1.008);
+		}
+	</style>
+	<fieldset id="D_8_34087" class="MenuMediaLink" style="margin-top: 0.5rem;">
+		<legend class="MenuMediaLinkTitle">線上服務<span style="display:none;">線上服務</span></legend>
+					<div>
+				<a href="http://odm.kh.edu.tw/tbpg/"  title="開啟「二代公文系統」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34087/二代.jpg" border="0" 
+						  align="absmiddle" alt="二代公文系統"></a>
+			</div>
+					<div>
+				<a href="https://portal.kh.edu.tw/"  title="開啟「資訊服務入口」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34087/資訊服務入口.jpg" border="0" 
+						  align="absmiddle" alt="資訊服務入口"></a>
+			</div>
+					<div>
+				<a href="https://educase.kh.edu.tw/"  title="開啟「教育百寶箱」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34087/教育百寶箱.jpg" border="0" 
+						  align="absmiddle" alt="教育百寶箱"></a>
+			</div>
+					<div>
+				<a href="http://mail.edu.tw/edumail.html"  title="開啟「教育部e-mail」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34087/教育部e_mail.jpg" border="0" 
+						  align="absmiddle" alt="教育部e-mail"></a>
+			</div>
+					<div>
+				<a href="http://163.16.62.7"  title="開啟「班級教室廣播系統」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34087/廣播.jpg" border="0" 
+						  align="absmiddle" alt="班級教室廣播系統"></a>
+			</div>
+					<div>
+				<a href="http://www.i-pass.com.tw/MissDigitalStudentIDCards"  title="開啟「補發學生證」（此項連結開啟新視窗）" target="_blank">
+					<img class="MenuMediaLinkSrc" src="/upload/8/302_34087/學生證4.jpg" border="0" 
+						  align="absmiddle" alt="補發學生證"></a>
+			</div>
+			</fieldset>
+				<div id="D_8_15014" class="MenuTitle_2">
+					<a class="MenuLink_2" href="mailto:menging2005@yahoo.com.tw" target="_blank" title="開啟「投訴專線」（此項連結開啟新視窗）"><img src='/upload/8/menu/螢幕擷取畫面 2025-10-02 162404.png' border='0' align='absmiddle' alt='投訴專線'></a>
+				</div>
+							<div id="D_8_39204" class="MenuTitle_2">
+					<a class="MenuLink_2" href="mailto:menging2005@yahoo.com.tw" target="_blank" title="開啟「個資投訴」（此項連結開啟新視窗）"><img src='/upload/8/menu/螢幕擷取畫面 2025-10-02 161052.png' border='0' align='absmiddle' alt='個資投訴'></a>
+				</div>
+							<div id="D_8_89911" class="MenuTitle_2">
+					<a class="MenuLink_2" href="https://forms.gle/PEe23SRRLqogsRBx8" target="_blank" title="開啟「午餐問卷」（此項連結開啟新視窗）">午餐問卷</a>
+				</div>
+											<div id="MenuSpaceRB" style="height: 3.5rem;" aria-hidden="true">&nbsp;</div>
+			</div>       
+			</div>	
+	<br clear="all">
+	<div id="DivBottom" role="contentinfo">
+		<div class="FootBlock" style="padding-bottom:2.5rem;">
+	<table role="presentation" class="FootText" border="0" cellpadding="0" cellspacing="0" align="center">
+		<tr>
+			<td valign="top">
+			<a id="AccessLinkB" class="AccessLink" accesskey="B" href="#AccessLinkB" title="下方聯絡資訊區（Alt+B）">:::</a>
+			</td>
+						<td id="FootAlign" align="center" valign="bottom" style="padding: 0rem 0.5rem;">
+			地址：高雄市鳥松區松埔北巷5-1號&nbsp;&nbsp;電話：(07)7323977&nbsp;&nbsp;傳真：(07)7322063&nbsp;&nbsp;VoIP：<a class="FootLink" href="https://webcall.kh.edu.tw/?a=1&n=923361701"  title="撥打網站的網路電話（此項連結將開啟新視窗）" target="_blank">923361701</a><br>高雄市立鳥松國中版權所有&nbsp;|&nbsp;<a class="FootLink" href="/view/index.php?WebID=8&MainType=HOME&SubType=COMM" title="對網站的意見反映">意見反映</a><br></td>
+							<td id="MarkCreativecommons" style="padding:0rem 0.3125rem;">
+	  				<span style="display: none;">|</span><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" target="_blank" title="創用 CC 授權條款（此項連結將開啟新視窗）">
+					<img src="/media/public/cc_6.png" alt="創用 CC 姓名標示-非商業性-相同方式分享 4.0 國際" width="88" height="31" align="absmiddle"> </a>
+				</td>
+						
+		</tr>
+	</table>
+</div>
+	</div>
+</div>
+</form>
+<script language="javascript">	window.top.document.title = "高雄市立鳥松國中"</script>
 </body>
 </html>
