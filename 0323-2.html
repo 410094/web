@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>CSS漸層，但是有動畫</title>
+        <style>
+            div {
+                width: 400px;
+                height: 500px;
+                
+            }
+            @keyframes kd1 {
+                0% {background: linear-gradient(0deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                8% {background: linear-gradient(30deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                17% {background: linear-gradient(60deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                25% {background: linear-gradient(90deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                33% {background: linear-gradient(120deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                42% {background: linear-gradient(150deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                50% {background: linear-gradient(180deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                58% {background: linear-gradient(210deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                67% {background: linear-gradient(240deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                75% {background: linear-gradient(270deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                82% {background: linear-gradient(300deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                92% {background: linear-gradient(330deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                100% {background: linear-gradient(360deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+            }
+            @keyframes kd2 {
+                0% {background: linear-gradient(90deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+                8% {background: linear-gradient(90deg,pink,red,orange,yellow,green,blue,indigo,purple); }
+                17% {background: linear-gradient(90deg,purple,pink,red,yellow,green,blue,indigo,purple); }
+                25% {background: linear-gradient(90deg,red,rgb(255, 0, 170),yellow,green,blue,indigo,purple,pink); }
+                33% {background: linear-gradient(90deg,red,orange,yellow,rgb(128, 0, 38),blue,indigo,purple,pink); }
+                42% {background: linear-gradient(90deg,rgb(102, 255, 0),rgb(255, 0, 0),yellow,green,blue,rgb(0, 61, 130),purple,rgb(209, 192, 255)); }
+                50% {background: linear-gradient(90deg,red,rgb(255, 0, 140),rgb(132, 0, 255),green,blue,indigo,purple,pink); }
+                58% {background: linear-gradient(90deg,rgb(183, 0, 255),orange,rgb(255, 0, 76),green,blue,rgb(130, 0, 22),rgb(51, 128, 0),rgb(245, 192, 255)); }
+                67% {background: linear-gradient(90deg,rgb(98, 0, 255),rgb(255, 0, 106),yellow,green,blue,indigo,purple,pink); }
+                75% {background: linear-gradient(90deg,red,rgb(0, 255, 213),yellow,green,blue,indigo,purple,pink); }
+                82% {background: linear-gradient(90deg,rgb(0, 38, 255),orange,rgb(225, 0, 255),green,blue,indigo,purple,pink); }
+                92% {background: linear-gradient(90deg,red,orange,rgb(255, 0, 242),rgb(34, 0, 128),blue,indigo,purple,rgb(192, 255, 208)); }
+                100% {background: linear-gradient(90deg,red,orange,yellow,green,blue,indigo,purple,pink); }
+            }
+            @keyframes kc2 {
+                0%{background: repeating-conic-gradient(red 10%,yellow 25%,green 30%,red 60%);}
+                50%{background: repeating-conic-gradient(red 25%,yellow 50%,green 15%,red 30%);}
+                0%{background: repeating-conic-gradient(red 10%,yellow 25%,green 30%,red 60%);}
+                }
+            #d1 {
+                width: 400px;
+                height: 300px;
+                background: linear-gradient(135deg, red, yellow);
+                animation: kd2 1s infinite linear;
+            }
+            #d2 {
+                width: 400px;
+                height: 400px;
+                background: linear-gradient(90deg,red,orange,yellow,green,blue,indigo,purple,pink);
+                animation: kd1 3s infinite linear;
+            }
+            #d3 {
+                width: 400px;
+                height: 100px;
+                background: linear-gradient(90deg,red 67%,white 90%,blue);
+
+            }
+            #d4 {
+                background: repeating-linear-gradient(45deg,red 30%,white 35%,green 40%,red 45%);
+            }
+            #r1 {
+                background: radial-gradient(circle, red,orange,yellow,green,blue,pink);
+            }
+             #r2 {
+                background: repeating-radial-gradient(circle, orange 10%,green 20%);
+            }
+            #c1 {
+                background: conic-gradient(red,yellow,green,red);
+            }
+            #c2 {
+                background: repeating-conic-gradient(red 10%,yellow 25%,green 30%,red 60%);
+                animation: kc2 1s infinite linear;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <a href="index.html">回首頁</a>
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+
+        <div id="r1"></div>
+        <div id="r2"></div>
+        
+
+        <div id="c1"></div>
+        <div id="c2"></div>
+        </body>
+</html>
