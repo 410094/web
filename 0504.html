@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>JS亂數</title>
+        <style>
+            #lottery {
+                font-size: 100px;
+            }
+            #b {
+                width: 100px;
+                height: 100px;
+                font-size: 30px;
+                margin: 10px;
+            }
+        </style>
+        <script>
+            function getRand(min,max) {
+                return Math.floor(Math.random()*(max - min + 1)) + min;
+            }
+            function getLottery() {
+                setTimeout(clearInterval, 3000, setInterval(()=>{
+                    document.getElementById("lottery").innerHTML = getRand(1,99);
+                },100));
+            }
+            function throwDice() {
+               setTimeout(clearInterval, 3000, setInterval((img)=>{
+                    img.src=`pic/${getRand(1,6)}.png`;
+                },50,event.target));
+            }
+        </script> 
+    </head>
+    <body>
+        <a href="index.html">回首頁</a>
+        <br>
+        <button id="b" onclick="getLottery();">抽籤</button>
+        <div id="lottery">99</div>
+        <hr>
+        <br>
+        <img src="pic/diceQ.png" width="100px" onclick="throwDice(event);">
+
+    </body>
+</html>
