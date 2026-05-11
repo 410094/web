@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>JS元素的產生與消失</title>
+        <style>
+            #board {
+                width: 600px;
+                height: 600px;
+                border: 1px solid black;
+                position: relative;
+            }
+            .target {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                position: absolute;
+            }
+            #timer {
+                width: 600px;
+                height: 10px;
+                background-color: green;
+                margin: 2px;
+
+            }
+        </style>
+        <script>
+            var game_sec = 30;
+            var game_timer = [];
+            var gamestarted = false; 
+            var score = 0;
+            var t;
+
+            function clickBoard() {
+                if (gamestarted) return;
+                gamestarted = true;
+
+                game_timer.push(setInterval(() => {
+                    game_sec -= 0.01;
+                    document.getElementById("timer").style.width = (game_sec * 20) + "px";
+                    
+                    if (game_sec < 10) {
+                        document.getElementById("timer").style.backgroundColor = "red";
+                    }
+                    
+                    if (game_sec <= 0) {
+                        document.getElementById("timer").style.width = "0px";
+                        game_stop();
+                    }
+                }, 10));
+
+                t = setInterval(createTarget, 500);
+                game_timer.push(t);
+            }
+
+            function createTarget() {
+                var a = document.createElement("div");
+                a.className = "target";
+                a.style.top = getRand(0, 600 - 50) + "px";
+                a.style.left = getRand(0, 600 - 50) + "px";
+                a.style.backgroundColor = `rgb(${getRand(0, 255)},${getRand(0, 255)},${getRand(0, 255)})`;
+
+                
+                document.getElementById("board").appendChild(a);
+                
+                a.onclick = function(e) {
+                    e.stopPropagation(); 
+                    hit(this);
+                };
+            }
+
+            function getRand(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function game_stop() {
+                gamestarted = false;
+                game_timer.forEach((t) => { clearInterval(t) });
+                alert("遊戲結束！總得分：" + score + " 分"); 
+                Array.from(document.getElementsByClassName("target")).forEach((a)=>{
+                    a.remove();
+                })
+            }
+
+            function hit(elm) {
+                if(!gamestarted) return;
+                elm.remove();
+                score++;
+                document.getElementById("score").innerHTML = score;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="timer"></div>
+        <div id="status">得分:<span id="score">0</span>分</div>
+        <div id="board" onclick="clickBoard()">
+            <div class="target" style="background-color: red;" onclick="hit(this)"></div>
+        </div>
+        <img src="pic/computer.jpg">
+    </body>
+</html>
