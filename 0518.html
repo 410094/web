@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>0518-鍵盤的輸入與控制</title>
+        <style>
+            #body {
+                background: url(pic/grass.jpg);
+                background-size: 300px 210px;
+            }
+            #role {
+                background: url(pic/sprite.png);
+                width: 48px;
+                height: 72px;
+                animation: walking 800ms steps(3) infinite paused;
+                position: absolute;
+            }
+            @keyframes walking {
+                0%{background-position-x: 0px;}
+                100%{background-position-x: -144px;} 
+            }
+        </style>
+        <script>
+            function kd() {
+                event.preventDefault();
+                var role=document.getElementById("role");
+                role.style.animationPlayState="running";
+                if(event.key=="ArrowDown"){
+                    role.style.backgroundPositionY="0px";
+                    role.pos.y++
+                }
+                else if(event.key=="ArrowLeft"){
+                    role.style.backgroundPositionY="-72px";
+                    role.pos.x--
+                }
+                else if(event.key=="ArrowRight"){
+                    role.style.backgroundPositionY="-144px";
+                    role.pos.x++
+                }
+                else if(event.key=="ArrowUp"){
+                    role.style.backgroundPositionY="-216px";
+                    role.pos.y--
+                }
+                role.style.top=role.pos.y+"px";
+                role.style.left=role.pos.x+"px";
+            }
+            function role_moving() {
+                var role=document.getElementById("role");
+                if(role.way["ArrowDown"]){
+                    role.pos.y++
+                }
+                if(role.way["ArrowDown"]){
+                    role.pos.y++
+                }
+
+            }
+            function init() {
+                var role=document.getElementById("role");
+                role.pos={x:0,y:0};
+            }
+            function mykeyup() {
+                var role=document.getElementById("role");
+                role.style.animationPlayState="paused";
+            }
+        </script>
+    </head>
+    <body onkeydown="kd();" id="body" onload="init();" onkeyup="mykeyup();">
+        <div id="role"></div>
+    </body>
+</html>
