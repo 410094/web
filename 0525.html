@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>0525</title>
+        <style>
+            @keyframes bg_move {
+                0% {background-position-y: 0px;}
+                100% {background-position-y: 216px;}
+            }
+            #universe {
+                width: 600px;
+                height: 600px;
+                background: url(pic/bg_stars.jpg) black; 
+                animation: bg_move 2s linear infinite;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer; 
+            }
+            #ship {
+                width: 40px;
+                top: 540px;
+                height: 60px;
+                left: 280px;
+                position: absolute;
+            }
+            .ufo {
+                width: 60px;
+                height: 40px;
+                position: absolute;
+            }
+            .bullet {
+                width: 4px;
+                height: 6px;
+                background-color: red;
+                position: absolute;
+                border-radius: 100% 100% 0 0;
+            }
+        </style>
+        <script>
+            var ship; 
+            var gaming = false; 
+            var ufoTimer;       
+            var game_score = 0; 
+
+            function bullet_move(b) {
+                if(b.pos.y < 0) {
+                    clearInterval(b.move);
+                    b.remove(); 
+                }
+                else {
+                    b.pos.y -= 2; 
+                    showPos(b);
+                    var hit = Array.from(document.getElementsByClassName("ufo")).filter((u)=>{
+                        return (u.pos.x < b.pos.x + 4) && 
+                               (u.pos.x + 60 > b.pos.x) && 
+                               (u.pos.y + 40 >= b.pos.y) && 
+                               (u.pos.y <= b.pos.y + 6);
+                    });
+
+                    if (hit.length > 0) {
+                        hit.forEach((u)=>{
+                            clearInterval(u.move); 
+                            u.remove();           
+                            game_score++;
+                        });
+                        document.getElementById("score").innerHTML = game_score;
+
+                        clearInterval(b.move);
+                        b.remove();
+                    }
+                }
+            }
+
+            function showPos(obj) {
+                obj.style.left = obj.pos.x + "px";
+                obj.style.top = obj.pos.y + "px";
+            }
+
+            function ship_move() {
+                if(!gaming) return; 
+                if(ship.way["ArrowUp"] && ship.pos.y > 0) ship.pos.y--;
+                else if(ship.way["ArrowDown"] && ship.pos.y < 540) ship.pos.y++;
+                else if(ship.way["ArrowLeft"] && ship.pos.x > 0) ship.pos.x--;
+                else if(ship.way["ArrowRight"] && ship.pos.x < 560) ship.pos.x++;
+                
+                ship.style.top = ship.pos.y + "px";
+                ship.style.left = ship.pos.x + "px";
+            }
+
+            function ufo_create() {
+                if(!gaming) return;
+                var u = document.createElement("img");
+                u.src = "pic/ufo.png";
+                u.className = "ufo";
+                u.pos = {x: getRand(0, 540), y: -40}; 
+                showPos(u); 
+                
+                u.move = setInterval(function() {
+                    ufo_move(u);
+                }, 1); 
+                
+                document.getElementById("universe").appendChild(u);
+            }
+
+            function ufo_move(u) {
+                if(u.pos.y > 600) {
+                    clearInterval(u.move);
+                    u.remove();
+                }
+                else {
+                    u.pos.y += 1; 
+                    showPos(u);
+                }
+            }
+
+            function game_start() {
+                if(gaming) return; 
+                
+                gaming = true;
+                game_score = 0;
+                
+                document.getElementById("score").innerHTML = game_score; 
+
+                var bgm = document.getElementById("bgm");
+
+                ufoTimer = setInterval(ufo_create, 1500);
+            }
+
+            function getRand(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function shoot() {
+                if(!gaming) return;
+                var b = document.createElement("div");
+                b.className = "bullet";
+                b.pos = {x: ship.pos.x + 18, y: ship.pos.y - 6};
+                showPos(b); 
+                
+                b.move = setInterval(function() {
+                    bullet_move(b);
+                }, 5);
+                
+                document.getElementById("universe").appendChild(b);
+            }
+
+            function game_stop() {
+                gaming = false;
+                clearInterval(ufoTimer);
+                document.getElementById("bgm").pause();
+            }
+
+            function game_init() {
+                ship = document.getElementById("ship");
+                ship.pos = {x: 280, y: 540};
+                ship.way = {"ArrowLeft": 0, "ArrowRight": 0, "ArrowUp": 0, "ArrowDown": 0};
+                ship.move = setInterval(ship_move, 5);
+                document.addEventListener("keydown", mykeydown);
+                document.addEventListener("keyup", mykeyup);
+                
+                gaming = false;
+            }
+
+            function mykeydown(event) {
+                if(Object.keys(ship.way).includes(event.key)) {
+                    event.preventDefault();
+                    ship.way[event.key] = 1;
+                } 
+                else if(event.key === " ") {
+                    event.preventDefault(); 
+                    shoot();
+                }
+            }
+
+            function mykeyup(event) {
+                if(Object.keys(ship.way).includes(event.key)) {
+                    event.preventDefault();
+                    ship.way[event.key] = 0;
+                }
+            }
+        </script>
+    </head>
+    <body onload="game_init()">
+        <div id="universe" onclick="game_start()">
+            <img id="ship" src="pic/ship.png" alt="ship">
+        </div>
+        <audio id="bgm" loop>
+            <source src="bgms/bgm.mp3">
+        </audio>
+        <div style="font-size: 24px; font-weight: bold; margin-top: 10px;">
+            得分: <span id="score" style="color: red;">0</span> 分
+        </div>
+    </body>
+</html>
