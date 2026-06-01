@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>project</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: sans-serif;
+                text-align: center; 
+                background-color: #f4f4f9;
+            }
+            .button {
+                margin: 20px;
+                cursor: pointer; 
+                border-radius: 10px; 
+                transition: transform 0.1s; 
+            }
+            .button:active {
+                transform: scale(0.95);
+            }
+            #b1 {
+                height: 100px;
+                width: 100px;
+                background: #ff4757; 
+            }
+            #b2 {
+                height: 100px;
+                width: 100px;
+                background: #1e90ff; 
+            }
+            .container {
+                display: flex;
+                align-items: center;
+                height: 40vh;
+                justify-content: center;
+            }
+            #info {
+                margin-top: 30px;
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+            }
+            #prob {
+                margin-top: 10px;
+                font-size: 18px;
+                color: #666;
+            }
+            
+            #gameOverScreen {
+                display: none; 
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                z-index: 100;
+                width: 300px;
+            }
+            #overlay {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 99;
+            }
+            input[type="text"] {
+                padding: 8px;
+                font-size: 16px;
+                width: 80%;
+                margin-bottom: 15px;
+            }
+            .action-btn {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                background: #2ed573;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+            #leaderboardList {
+                text-align: left;
+                padding-left: 20px;
+                margin-top: 20px;
+            }
+        </style>
+        <script>
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyxFomNg9JjlSwN901_DmsI_PHfJpIkUe_n3NWwvvmU2FtIdDAgFrKuttp4pz77d1ZB/exec"; 
+            
+            var correct;
+            var score = 0; 
+
+            function getRand(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function game_start() {
+                score = 0; 
+                correct = getRand(1, 2); 
+                document.getElementById("gameOverScreen").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+                update_info("請憑直覺選一個方塊。");
+            }
+
+            function game_stop() {
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("gameOverScreen").style.display = "block";
+                document.getElementById("finalScoreText").innerText = "你連續猜對了 " + score + " 次！";
+                
+                // 如果是 0 分，不用上傳排行榜
+                if(score === 0) {
+                    document.getElementById("uploadSection").style.display = "none";
+                } else {
+                    document.getElementById("uploadSection").style.display = "block";
+                }
+                
+                fetchLeaderboard(); 
+            }
+
+            function next(ans) {
+                if (ans === correct) {
+                    score++; 
+                    correct = getRand(1, 2); 
+                    update_info("選對了！繼續挑戰。");
+                } else {
+                    game_stop(); 
+                }
+            }
+
+            function update_info(text) {
+                let targetScore = score + 1;
+                let probability = Math.pow(0.5, targetScore) * 100;
+                
+                let probText = probability >= 0.0001 ? probability.toFixed(4) + "%" : "極低 (<0.0001%)";
+                
+                document.getElementById("info").innerText = text;
+                document.getElementById("prob").innerText = "目前突破機率：" + probText;
+            }
+
+
+            // 1. 上傳分數
+            function submitScore() {
+                let name = document.getElementById("playerName").value;
+                if (!name) name = "無名氏";
+
+                let btn = document.getElementById("submitBtn");
+                btn.innerText = "上傳中...";
+                btn.disabled = true;
+
+                fetch(SCRIPT_URL, {
+                    method: "POST",
+                    body: JSON.stringify({ name: name, score: score })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    btn.innerText = "已上傳";
+                    fetchLeaderboard(); // 上傳完重新抓取排行榜
+                })
+                .catch(error => {
+                    console.error("Error!", error);
+                    btn.innerText = "上傳失敗";
+                    btn.disabled = false;
+                });
+            }
+
+            // 2. 抓取排行榜
+            function fetchLeaderboard() {
+                let list = document.getElementById("leaderboardList");
+                list.innerHTML = "讀取中...";
+
+                fetch(SCRIPT_URL)
+                .then(response => response.json())
+                .then(data => {
+                    list.innerHTML = "";
+                    if(data.length === 0) {
+                        list.innerHTML = "<li>目前無人上榜</li>";
+                        return;
+                    }
+                    data.forEach(item => {
+                        let li = document.createElement("li");
+                        li.innerText = item.name + " - " + item.score + " 次";
+                        list.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    list.innerHTML = "排行榜讀取失敗";
+                });
+            }
+
+            window.onload = function() {
+                game_start();
+            };
+        </script>
+    </head>
+    <body>
+        <div id="info">準備中...</div>
+        <div id="prob"></div>
+        
+        <div class="container">
+            <div id="b1" class="button" onclick="next(1);"></div>
+            <div id="b2" class="button" onclick="next(2);"></div>
+        </div>
+
+        <div id="overlay"></div>
+        <div id="gameOverScreen">
+            <h2>遊戲結束</h2>
+            <p id="finalScoreText"></p>
+            
+            <div id="uploadSection">
+                <input type="text" id="playerName" placeholder="輸入大名留名青史">
+                <button id="submitBtn" class="action-btn" onclick="submitScore()">上傳成績</button>
+            </div>
+
+            <hr style="margin-top:20px;">
+            <h3>🌍 全球排行榜 🌍</h3>
+            <ol id="leaderboardList">
+                </ol>
+            
+            <button class="action-btn" style="background:#ff4757; margin-top:15px;" onclick="game_start()">再玩一次</button>
+        </div>
+    </body>
+</html>
