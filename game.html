@@ -102,6 +102,14 @@
                 correct = getRand(1, 2); 
                 document.getElementById("gameOverScreen").style.display = "none";
                 document.getElementById("overlay").style.display = "none";
+                
+                // 重置按鈕狀態與輸入框
+                let btn = document.getElementById("submitBtn");
+                if(btn) {
+                    btn.innerText = "上傳成績";
+                    btn.disabled = false;
+                }
+                
                 update_info("請憑直覺選一個方塊。");
             }
 
@@ -110,7 +118,6 @@
                 document.getElementById("gameOverScreen").style.display = "block";
                 document.getElementById("finalScoreText").innerText = "你連續猜對了 " + score + " 次！";
                 
-                // 如果是 0 分，不用上傳排行榜
                 if(score === 0) {
                     document.getElementById("uploadSection").style.display = "none";
                 } else {
@@ -140,6 +147,7 @@
                 document.getElementById("prob").innerText = "目前突破機率：" + probText;
             }
 
+            // === Google Sheets 互動邏輯 ===
 
             // 1. 上傳分數
             function submitScore() {
@@ -152,6 +160,9 @@
 
                 fetch(SCRIPT_URL, {
                     method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain;charset=utf-8"
+                    },
                     body: JSON.stringify({ name: name, score: score })
                 })
                 .then(response => response.json())
