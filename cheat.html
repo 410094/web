@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Backstage</title>
+        <style>
+            #cheatBtn {
+                height: 100px;
+                width: 100px;
+                background: greenyellow;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+        </style>
+        <script>
+            function cheat() {
+                fetch("https://script.google.com/macros/s/AKfycbyxFomNg9JjlSwN901_DmsI_PHfJpIkUe_n3NWwvvmU2FtIdDAgFrKuttp4pz77d1ZB/exec", {
+                    method: "POST",
+                    body: JSON.stringify({ name: "Hacker", score: 1000000 })
+                });
+                
+                document.getElementById("text").innerText = "更改成功！";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="text">請按按鈕進行攻擊</div>
+        <div id="cheatBtn" onclick="cheat()"></div>
+    </body>
+</html>
