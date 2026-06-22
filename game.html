@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+
+//made by Dingo
+
 <html>
     <head>
-        <title>project</title>
+        <title>二選一</title>
         <style>
             body {
                 margin: 0;
                 font-family: sans-serif;
                 text-align: center; 
-                background-color: #f4f4f9;
+                background-color: white;
             }
             .button {
                 margin: 20px;
@@ -15,224 +18,74 @@
                 border-radius: 10px; 
                 transition: transform 0.1s; 
             }
-            .button:active {
-                transform: scale(0.95);
-            }
+
             #b1 {
                 height: 100px;
                 width: 100px;
-                background: #ff4757; 
+                background: red; 
             }
             #b2 {
                 height: 100px;
                 width: 100px;
-                background: #1e90ff; 
+                background: blue;
             }
             .container {
                 display: flex;
                 align-items: center;
-                height: 40vh;
+                height: 60vh;
                 justify-content: center;
             }
             #info {
-                margin-top: 30px;
+                margin-top: 50px;
                 font-size: 24px;
                 font-weight: bold;
-                color: #333;
-            }
-            #prob {
-                margin-top: 10px;
-                font-size: 18px;
-                color: #666;
-            }
-            
-            #gameOverScreen {
-                display: none; 
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: white;
-                padding: 30px;
-                border-radius: 15px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-                z-index: 100;
-                width: 300px;
-            }
-            #overlay {
-                display: none;
-                position: fixed;
-                top: 0; left: 0; width: 100%; height: 100%;
-                background: rgba(0,0,0,0.5);
-                z-index: 99;
-            }
-            input[type="text"] {
-                padding: 8px;
-                font-size: 16px;
-                width: 80%;
-                margin-bottom: 15px;
-            }
-            .action-btn {
-                padding: 10px 20px;
-                font-size: 16px;
-                cursor: pointer;
-                background: #2ed573;
-                color: white;
-                border: none;
-                border-radius: 5px;
-            }
-            #leaderboardList {
-                text-align: left;
-                padding-left: 20px;
-                margin-top: 20px;
+                color: black;
             }
         </style>
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyxFomNg9JjlSwN901_DmsI_PHfJpIkUe_n3NWwvvmU2FtIdDAgFrKuttp4pz77d1ZB/exec"; 
-                
-                let correct;
-                let score = 0; 
+            var correct;
+            var score = 0; 
 
-                function getRand(min, max) {
-                    return Math.floor(Math.random() * (max - min + 1)) + min;
-                }
+            function getRand(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
 
-                function game_start() {
-                    score = 0; 
+            function game_start() {
+                score = 0; 
+                update_info("請憑直覺選一個方塊。分數： " + score);
+                correct = getRand(1, 2); 
+            }
+
+            function game_stop() {
+                alert("遊戲結束！\n你的分數是：" + score);
+                game_start(); 
+            }
+
+            function next(ans) {
+                if (ans === correct) {
+                    score++; 
+                    update_info("選對了！繼續挑戰。目前分數： " + score);
                     correct = getRand(1, 2); 
-                    document.getElementById("gameOverScreen").style.display = "none";
-                    document.getElementById("overlay").style.display = "none";
-                    
-                    let btn = document.getElementById("submitBtn");
-                    if(btn) {
-                        btn.innerText = "上傳成績";
-                        btn.disabled = false;
-                    }
-                    
-                    update_info("請憑直覺選一個方塊。");
+                } else {
+                    game_stop(); 
                 }
+            }
 
-                function game_stop() {
-                    document.getElementById("overlay").style.display = "block";
-                    document.getElementById("gameOverScreen").style.display = "block";
-                    document.getElementById("finalScoreText").innerText = "你連續猜對了 " + score + " 次！";
-                    
-                    if(score === 0) {
-                        document.getElementById("uploadSection").style.display = "none";
-                    } else {
-                        document.getElementById("uploadSection").style.display = "block";
-                    }
-                    
-                    fetchLeaderboard(); 
-                }
+            function update_info(text) {
+                document.getElementById("info").innerText = text;
+            }
 
-                function next(ans) {
-                    if (ans === correct) {
-                        score++; 
-                        correct = getRand(1, 2); 
-                        update_info("選對了！繼續挑戰。");
-                    } else {
-                        game_stop(); 
-                    }
-                }
-
-                function update_info(text) {
-                    let targetScore = score + 1;
-                    let probability = Math.pow(0.5, targetScore) * 100;
-                    
-                    let probText = probability >= 0.0001 ? probability.toFixed(4) + "%" : "極低 (<0.0001%)";
-                    
-                    document.getElementById("info").innerText = text;
-                    document.getElementById("prob").innerText = "目前突破機率：" + probText;
-                }
-
-                function submitScore() {
-                    let name = document.getElementById("playerName").value;
-                    if (!name) name = "無名氏";
-
-                    let btn = document.getElementById("submitBtn");
-                    btn.innerText = "上傳中...";
-                    btn.disabled = true;
-
-                    fetch(SCRIPT_URL, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "text/plain;charset=utf-8"
-                        },
-                        body: JSON.stringify({ name: name, score: score })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        btn.innerText = "已上傳";
-                        fetchLeaderboard(); 
-                    })
-                    .catch(error => {
-                        console.error("Error!", error);
-                        btn.innerText = "上傳失敗";
-                        btn.disabled = false;
-                    });
-                }
-
-                function fetchLeaderboard() {
-                    let list = document.getElementById("leaderboardList");
-                    list.innerHTML = "讀取中...";
-
-                    fetch(SCRIPT_URL)
-                    .then(response => response.json())
-                    .then(data => {
-                        list.innerHTML = "";
-                        if(data.length === 0) {
-                            list.innerHTML = "<li>目前無人上榜</li>";
-                            return;
-                        }
-                        data.forEach(item => {
-                            let li = document.createElement("li");
-                            li.innerText = item.name + " - " + item.score + " 次";
-                            list.appendChild(li);
-                        });
-                    })
-                    .catch(error => {
-                        list.innerHTML = "排行榜讀取失敗";
-                    });
-                }
-
-                document.getElementById("b1").addEventListener("click", () => next(1));
-                document.getElementById("b2").addEventListener("click", () => next(2));
-                document.getElementById("submitBtn").addEventListener("click", submitScore);
-                document.getElementById("restartBtn").addEventListener("click", game_start);
-
-                // 初始化遊戲
+            window.onload = function() {
                 game_start();
-            });
+            };
         </script>
     </head>
     <body>
         <div id="info">準備中...</div>
-        <div id="prob"></div>
         
         <div class="container">
-            <div id="b1" class="button"></div>
-            <div id="b2" class="button"></div>
+            <div id="b1" class="button" onclick="next(1);"></div>
+            <div id="b2" class="button" onclick="next(2);"></div>
         </div>
-
-        <div id="overlay"></div>
-        <div id="gameOverScreen">
-            <h2>遊戲結束</h2>
-            <p id="finalScoreText"></p>
-            
-            <div id="uploadSection">
-                <input type="text" id="playerName" placeholder="輸入大名留名青史">
-                <button id="submitBtn" class="action-btn">上傳成績</button>
-            </div>
-
-            <hr style="margin-top:20px;">
-            <h3>全球排行榜</h3>
-            <ol id="leaderboardList">
-            </ol>
-            
-            <button id="restartBtn" class="action-btn" style="background:#ff4757; margin-top:15px;">再玩一次</button>
-        </div>
-        <br><span>made by Dingo</span>
     </body>
 </html>
